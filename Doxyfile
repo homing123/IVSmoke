@@ -1027,7 +1027,12 @@ WARN_LOGFILE           =
 # Note: If this tag is empty the current directory is searched.
 
 INPUT                  = ./IVSmoke/Source \
-                         IVSmoke_QuickStartGuide.md
+                         ./docs/pages/QuickStartGuide/QuickStartGuide.md \
+                         ./docs/pages/CollisionComponent/CollisionComponentGuide.md \
+                         ./docs/pages/CustomMaterial/CustomMaterialGuide.md \
+                         ./docs/pages/GlobalSettings/GlobalSettingsGuide.md \
+                         ./docs/pages/HoleGeneratorComponent/HoleGeneratorComponentGuide.md \
+                         ./docs/pages/VoxelVolume/VoxelVolumeGuide.md \
 
 # This tag can be used to specify the character encoding of the source files
 # that Doxygen parses. Internally Doxygen uses the UTF-8 encoding. Doxygen uses
@@ -1242,7 +1247,7 @@ FILTER_SOURCE_PATTERNS =
 # (index.html). This can be useful if you have a project on for instance GitHub
 # and want to reuse the introduction page also for the Doxygen output.
 
-USE_MDFILE_AS_MAINPAGE = IVSmoke_QuickStartGuide.md
+USE_MDFILE_AS_MAINPAGE = ./docs/pages/QuickStartGuide/QuickStartGuide.md
 
 # If the IMPLICIT_DIR_DOCS tag is set to YES, any README.md file found in sub-
 # directories of the project's root, is used as the documentation for that sub-
@@ -1424,7 +1429,7 @@ GENERATE_HTML          = YES
 # The default directory is: html.
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
-HTML_OUTPUT            = .
+HTML_OUTPUT            = html
 
 # The HTML_FILE_EXTENSION tag can be used to specify the file extension for each
 # generated HTML page (for example: .htm, .php, .asp).
