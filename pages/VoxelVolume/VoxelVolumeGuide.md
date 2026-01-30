@@ -138,7 +138,7 @@ Do not confuse `VoxelCollisionChannel` (Settings) with `UIVSmokeCollisionCompone
 
 ## Debugging
 
-![image.png](image.png)
+![VoxelVolume_image.png](VoxelVolume_image.png)
 
 The class includes robust editor and runtime debugging tools located under `Debug Settings`.
 
