@@ -152,4 +152,20 @@ The class includes robust editor and runtime debugging tools located under `Debu
 
 ---
 
+### Console Commands (CVars)
+
+You can control debug visualizations at runtime using the console (`~` key). These commands affect **all** active `AIVSmokeVoxelVolume` actors in the world simultaneously.
+
+All commands share the prefix: **`IVSmoke.Volume.`**
+
+| Command | Arguments | Description |
+| --- | --- | --- |
+| **`IVSmoke.Volume.Debug`** | `0` or `1` | **Master Switch.** Toggles the entire debug system on or off. Setting this to 0 hides all visualizations immediately. |
+| **`IVSmoke.Volume.ShowWireframe`** | `0` or `1` | Toggles the lightweight wireframe cube visualization for active voxels. |
+| **`IVSmoke.Volume.ShowMesh`** | `0` or `1` | Toggles the Instanced Static Mesh visualization. **Warning:** Rendering thousands of meshes can be expensive. |
+| **`IVSmoke.Volume.ShowStatus`** | `0` or `1` | Toggles the floating status text (State, Voxel Count, Checksum) above the actor. |
+| **`IVSmoke.Volume.SetViewMode`** | `Mode ID` | Changes visualization color. Use **`0`** for Solid Color (default) or **`1`** for Heatmap (gradient based on generation order). |
+
+---
+
 *Copyright (c) 2026, Team SDB. All rights reserved.*
