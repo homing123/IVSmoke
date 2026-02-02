@@ -91,8 +91,8 @@ $(function(){initNavTree('md_pages_2_hole_generator_component_2_hole_generator_c
   <div class="headertitle"><div class="title">HoleGenerator Component Guide </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md119"></a></p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md120"></a>
+<div class="textblock"><p><a class="anchor" id="autotoc_md113"></a></p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md114"></a>
 Explosion (Grenade)</h1>
 <div class="image">
 <img src="HoleGeneratorComponent_image.png" alt=""/>
@@ -118,7 +118,7 @@ HoleGeneratorComponent_image.png</div></div>
 <li><b>Distortion Distance</b>: Maximum distortion distance</li>
 </ul>
 <hr  />
-<h1 class="doxsection"><a class="anchor" id="autotoc_md122"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md116"></a>
 Penetration (Bullet)</h1>
 <div class="image">
 <img src="HoleGeneratorComponent_image1.png" alt=""/>
@@ -143,7 +143,7 @@ HoleGeneratorComponent_image1.png</div></div>
 HoleGeneratorComponent_image2.png</div></div>
     <p>Demo preset path : Plugins → <a class="el" href="class_i_v_smoke.html">IVSmoke</a> → DataAssets</p>
 <p><b>To create a new Preset, follow these steps</b></p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md125"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md119"></a>
 Create</h1>
 <p>Content Drawer → Right-click → Miscellaneous → Data Asset → Select [<a class="el" href="class_i_v_smoke.html">IVSmoke</a> Hole Preset]</p>
 <div class="image">
@@ -155,14 +155,14 @@ HoleGeneratorComponent_image3.png</div></div>
 <div class="caption">
 HoleGeneratorComponent_image4.png</div></div>
     <hr  />
-<h1 class="doxsection"><a class="anchor" id="autotoc_md127"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md121"></a>
 Usage</h1>
 <div class="image">
 <img src="HoleGeneratorComponent_image5.png" alt=""/>
 <div class="caption">
-HoleGeneratorComponent_image5.png</div></div>
-    <h2 class="doxsection"><a class="anchor" id="autotoc_md128"></a>
-<b>Selecting the Right Interaction Node</b></h2>
+API Functions</div></div>
+    <h2 class="doxsection"><a class="anchor" id="autotoc_md122"></a>
+<b>Select the Right Interaction Node</b></h2>
 <blockquote class="doxtable">
 <p>Choose the API node that best aligns with the specific physical behavior you intend to simulate</p>
 <ol type="1">
@@ -171,86 +171,76 @@ HoleGeneratorComponent_image5.png</div></div>
 <li><b>Dynamic (Request Dynamic Hole):</b> Tailored for <b>real-time tracking</b>. This node allows the smoke void to follow a moving subject—such as a character or vehicle—maintaining a continuous interaction as the actor navigates through the volume. </li>
 </ol>
 </blockquote>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md129"></a>
-Before. Add UIVSmokeHoleRequestComponent</h2>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md123"></a>
+Before STARTING, Add UIVSmokeHoleRequestComponent!</h2>
 <div class="image">
 <img src="HoleGeneratorComponent_image6.png" alt=""/>
 <div class="caption">
-HoleGeneratorComponent_image6.png</div></div>
+Please attach the UIVSmokeHoleRequestComponent on the pawn class</div></div>
     <p>Before utilizing any Request Nodes, ensure that the <b><span class="tt"><a class="el" href="class_u_i_v_smoke_hole_request_component.html" title="Handles network routing for hole requests. This component enables clients to request holes on VoxelVo...">UIVSmokeHoleRequestComponent</a></span></b> has been added to the subject Character or Pawn class actor.</p>
 <ul>
 <li><b>Role:</b> This component facilitates the interaction queries between the actor and the smoke volume.</li>
 <li><b>Dependency:</b> It is a mandatory requirement if you are using an <b><span class="tt"><a class="el" href="class_a_i_v_smoke_voxel_volume.html">AIVSmokeVoxelVolume</a></span></b> actor equipped with the <b><span class="tt"><a class="el" href="class_u_i_v_smoke_hole_generator_component.html" title="Component that generates hole texture for volumetric smoke. Provides public API for penetration and e...">UIVSmokeHoleGeneratorComponent</a></span></b> to generate smoke holes.</li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md130"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md124"></a>
 Case A. Request Penetration Hole</h2>
 <div class="image">
 <img src="HoleGeneratorComponent_image7.png" alt=""/>
 <div class="caption">
-HoleGeneratorComponent_image7.png</div></div>
+How to use PenetrationHole function</div></div>
     <p>This node is used to simulate the trajectories of high-speed projectiles that pierce through smoke in a straight line, such as bullets or railgun rounds.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md131"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md125"></a>
 <b>Execution Timing</b></h2>
 <p>Trigger this node when physical detection is confirmed—specifically during events such as <b>Hit</b>, <b>Overlap</b>, or <b>Destruction</b> of the projectile object.</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone"><b>Pin Name</b>  </th><th class="markdownTableHeadNone"><b>Connection Value &amp; Method</b>  </th><th class="markdownTableHeadNone"><b>Notes</b>  </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><b>Target</b>  </td><td class="markdownTableBodyNone">Call <b>Get Hole Requester</b> node  </td><td class="markdownTableBodyNone">References the <span class="tt"><a class="el" href="class_u_i_v_smoke_hole_request_component.html" title="Handles network routing for hole requests. This component enables clients to request holes on VoxelVo...">UIVSmokeHoleRequestComponent</a></span>. <b>Mandatory for multiplayer functionality;</b> it will not function if left empty.  </td></tr>
+<td class="markdownTableBodyNone"><b>IVSmokeVoxelVolume</b>  </td><td class="markdownTableBodyNone"><span class="tt">Other Actor</span> from Overlap/Hit  </td><td class="markdownTableBodyNone">Connect the <span class="tt">IVSmokeVoxelVolume</span> belonging to the collided smoke volume.  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><b>IVSmokeHoleGeneratorComponent</b>  </td><td class="markdownTableBodyNone"><span class="tt">Other Comp</span> from Overlap/Hit  </td><td class="markdownTableBodyNone">Connect the <span class="tt">IVSmokeHoleGeneratorComponent</span> belonging to the collided smoke volume.  </td></tr>
+<td class="markdownTableBodyNone"><b>Bullet Origin</b>  </td><td class="markdownTableBodyNone">Actor's <b>World Location</b>  </td><td class="markdownTableBodyNone">The world coordinates where penetration begins. This defines the start point for the linear trajectory calculation.  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><b>Origin</b>  </td><td class="markdownTableBodyNone">Actor's <b>World Location</b>  </td><td class="markdownTableBodyNone">The world coordinates where penetration begins. This defines the start point for the linear trajectory calculation.  </td></tr>
+<td class="markdownTableBodyNone"><b>Bullet Direction</b>  </td><td class="markdownTableBodyNone">Actor's <b>Forward Vector</b>  </td><td class="markdownTableBodyNone">A <b>normalized unit vector</b> representing the projectile's heading. It is used in conjunction with the Origin to calculate the path through the smoke.  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><b>Direction</b>  </td><td class="markdownTableBodyNone">Actor's <b>Forward Vector</b>  </td><td class="markdownTableBodyNone">A <b>normalized unit vector</b> representing the projectile's heading. It is used in conjunction with the Origin to calculate the path through the smoke.  </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><b>Preset</b>  </td><td class="markdownTableBodyNone">Dropdown Menu  </td><td class="markdownTableBodyNone">You must assign an <span class="tt">IVSmokeHolePreset</span> data asset. <b>Note: The Preset type should be set to "Explosion."</b>  </td></tr>
+<td class="markdownTableBodyNone"><b>Bullet Preset</b>  </td><td class="markdownTableBodyNone">Dropdown Menu  </td><td class="markdownTableBodyNone">You must assign an <span class="tt">IVSmokeHolePreset</span> data asset. <b>Note: The Preset type should be set to "Explosion."</b>  </td></tr>
 </table>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md132"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md126"></a>
 Case B. Request Explosion Hole</h2>
 <div class="image">
 <img src="HoleGeneratorComponent_image8.png" alt=""/>
 <div class="caption">
-HoleGeneratorComponent_image8.png</div></div>
+How to use ExplosionHole function</div></div>
     <p>This node is used to simulate <b>spherical (radial) void areas</b> in smoke, typically caused by explosive devices like grenades, C4, or artillery shells.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md133"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md127"></a>
 <b>Execution Timing</b></h2>
 <p>Trigger this node at the moment the explosion is finalized. This is usually during events such as <b>Hit (OnComponentHit)</b>, <b>Overlap (OnComponentBeginOverlap)</b>, or when the projectile actor is <b>Destroyed</b>.</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone"><b>Pin Name</b>  </th><th class="markdownTableHeadNone"><b>Connection Value &amp; Method</b>  </th><th class="markdownTableHeadNone"><b>Notes</b>  </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><b>Target</b>  </td><td class="markdownTableBodyNone">Call <b>Get Hole Requester</b> node  </td><td class="markdownTableBodyNone">References the <span class="tt"><a class="el" href="class_u_i_v_smoke_hole_request_component.html" title="Handles network routing for hole requests. This component enables clients to request holes on VoxelVo...">UIVSmokeHoleRequestComponent</a></span>. <b>Mandatory for multiplayer;</b> the request will fail if this component is not registered.  </td></tr>
+<td class="markdownTableBodyNone"><b>IVSmokeVoxelVolume</b>  </td><td class="markdownTableBodyNone"><span class="tt">Other Actor</span> from Overlap/Hit  </td><td class="markdownTableBodyNone">Connect the <span class="tt">IVSmokeVoxelVolume</span> of the smoke volume that was hit.  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><b>IVSmokeHoleGeneratorComponent</b>  </td><td class="markdownTableBodyNone"><span class="tt">Other Comp</span> from Overlap/Hit  </td><td class="markdownTableBodyNone">Connect the <span class="tt">IVSmokeHoleGeneratorComponent</span> of the smoke volume that was hit.  </td></tr>
+<td class="markdownTableBodyNone"><b>Explosion Origin</b>  </td><td class="markdownTableBodyNone">Actor's <b>World Location</b>  </td><td class="markdownTableBodyNone">Specifies the center of the explosion. Use the object's current world coordinates to define the axis of the spherical clearing.  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><b>Origin</b>  </td><td class="markdownTableBodyNone">Actor's <b>World Location</b>  </td><td class="markdownTableBodyNone">Specifies the center of the explosion. Use the object's current world coordinates to define the axis of the spherical clearing.  </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><b>Preset</b>  </td><td class="markdownTableBodyNone">Dropdown Menu  </td><td class="markdownTableBodyNone">You must assign a valid <span class="tt">IVSmokeHolePreset</span> data asset. <b>The Preset type must be set to "Explosion."</b>  </td></tr>
+<td class="markdownTableBodyNone"><b>Explosion Preset</b>  </td><td class="markdownTableBodyNone">Dropdown Menu  </td><td class="markdownTableBodyNone">You must assign a valid <span class="tt">IVSmokeHolePreset</span> data asset. <b>The Preset type must be set to "Explosion."</b>  </td></tr>
 </table>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md134"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md128"></a>
 Case C. Request Dynamic Hole</h2>
 <div class="image">
 <img src="HoleGeneratorComponent_image9.png" alt=""/>
 <div class="caption">
-HoleGeneratorComponent_image9.png</div></div>
+How to use DynamicHole function</div></div>
     <p>Use this node when you need to <b>dynamically clear smoke or maintain a hole in real-time</b> based on the movement path of an object, such as a character or a vehicle.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md135"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md129"></a>
 <b>Execution Timing</b></h2>
-<p>This node should be triggered by the <b><span class="tt">OnComponentBeginOverlap</span></b> event from the actor's <span class="tt">CollisionComponent</span>. Once triggered, the system will automatically track the actor and manage the smoke interaction.</p>
+<p>This node may be triggered by the <b><span class="tt">OnComponentBeginOverlap</span></b> or <b><span class="tt">Trigger</span></b> event from the actor's <span class="tt">CollisionComponent</span>. Once triggered, the system will automatically track the actor and manage the smoke interaction.</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone"><b>Pin Name</b>  </th><th class="markdownTableHeadNone"><b>Connection Value &amp; Method</b>  </th><th class="markdownTableHeadNone"><b>Notes</b>  </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><b>Target</b>  </td><td class="markdownTableBodyNone">Call <b>Get Hole Requester</b> node  </td><td class="markdownTableBodyNone">References the <span class="tt"><a class="el" href="class_u_i_v_smoke_hole_request_component.html" title="Handles network routing for hole requests. This component enables clients to request holes on VoxelVo...">UIVSmokeHoleRequestComponent</a></span>. <b>Mandatory for multiplayer;</b> ensure this component is added to your actor.  </td></tr>
+<td class="markdownTableBodyNone"><b>IVSmokeVoxelVolume</b>  </td><td class="markdownTableBodyNone"><span class="tt">Other Actor</span> from Overlap  </td><td class="markdownTableBodyNone">Connect the <span class="tt">IVSmokeVoxelVolume</span> belonging to the smoke volume the actor has entered.  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><b>IVSmokeHoleGeneratorComponent</b>  </td><td class="markdownTableBodyNone"><span class="tt">Other Comp</span> from Overlap  </td><td class="markdownTableBodyNone">Connect the <span class="tt">IVSmokeHoleGeneratorComponent</span> belonging to the smoke volume the actor has entered.  </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><b>Target Actor</b>  </td><td class="markdownTableBodyNone"><b>Self</b> (Reference to Self)  </td><td class="markdownTableBodyNone">Specifies the subject actor to be tracked. The smoke hole will follow this actor’s movement.  </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><b>Instigator</b>  </td><td class="markdownTableBodyNone"><b>Get Controller</b>  </td><td class="markdownTableBodyNone"><b>Crucial for multiplayer.</b> You must provide the Controller to ensure the action is correctly attributed and synchronized across the network.  </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><b>Preset</b>  </td><td class="markdownTableBodyNone">Dropdown Menu  </td><td class="markdownTableBodyNone">Assign the <span class="tt">IVSmokeHolePreset</span> data asset. <b>The Preset type must be set to "Dynamic."</b>  </td></tr>
+<td class="markdownTableBodyNone"><b>Dynamic Preset</b>  </td><td class="markdownTableBodyNone">Dropdown Menu  </td><td class="markdownTableBodyNone">Assign the <span class="tt">IVSmokeHolePreset</span> data asset. <b>The Preset type must be set to "Dynamic."</b>  </td></tr>
 </table>
 <hr  />
 <p><em>Copyright (c) 2026, Team SDB. All rights reserved.</em> </p>

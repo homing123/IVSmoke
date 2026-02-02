@@ -120,19 +120,16 @@ Public Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Data for a single shadow cascade. Contains render targets, matrices, and update state.</p>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md2"></a>
-TIMING MODEL (Single-Buffer):</h1>
-<p>This uses a SINGLE-BUFFER approach because SceneCaptureComponent2D with bCaptureEveryFrame=true executes capture in the SAME frame's render pass.</p>
+TIMING MODEL (Synchronous Capture):</h1>
+<p>We use manual CaptureScene() calls instead of bCaptureEveryFrame to ensure VP matrix and depth texture are always synchronized within the same frame.</p>
 <p>Frame N timeline:</p><ol type="1">
-<li>Game Thread: Update() calculates VP matrix and sets CaptureComponent transform</li>
-<li>Render Thread: SceneCaptureComponent2D captures depth using current transform</li>
-<li>Render Thread: Ray march shader samples the captured texture with VP matrix</li>
+<li>Game Thread: Update() calculates VP_N and calls CaptureScene()</li>
+<li>Render Thread: Pre-pass ray march uses VP_N with Depth_N ✓ </li>
 </ol>
-<p>Since capture and sampling happen in the SAME frame, no double-buffering is needed. The VP matrix calculated in Update() matches the texture captured in the same frame.</p>
-<p>NOTE: Double-buffering would be needed if capture happened at END of frame and </p>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md3"></a>
-sampling happened at START of next frame, but that's not the case here.</h1>
+3. Render Thread: Post-process composite</h1>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_c_s_m_renderer_8h_source.html#l00037">37</a> of file <a class="el" href="_i_v_smoke_c_s_m_renderer_8h_source.html">IVSmokeCSMRenderer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_c_s_m_renderer_8h_source.html#l00031">31</a> of file <a class="el" href="_i_v_smoke_c_s_m_renderer_8h_source.html">IVSmokeCSMRenderer.h</a>.</p>
 </div><a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
 <a id="aab1965d6abd0a94365157ce5fdfb473f" name="aab1965d6abd0a94365157ce5fdfb473f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aab1965d6abd0a94365157ce5fdfb473f">&#9670;&#160;</a></span>bNeedsCapture</h2>
@@ -147,7 +144,7 @@ sampling happened at START of next frame, but that's not the case here.</h1>
 </div><div class="memdoc">
 <p>Whether this cascade needs capture this frame. </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_c_s_m_renderer_8h_source.html#l00074">74</a> of file <a class="el" href="_i_v_smoke_c_s_m_renderer_8h_source.html">IVSmokeCSMRenderer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_c_s_m_renderer_8h_source.html#l00068">68</a> of file <a class="el" href="_i_v_smoke_c_s_m_renderer_8h_source.html">IVSmokeCSMRenderer.h</a>.</p>
 
 </div>
 </div>
@@ -164,7 +161,7 @@ sampling happened at START of next frame, but that's not the case here.</h1>
 </div><div class="memdoc">
 <p>Scene capture component for this cascade. </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_c_s_m_renderer_8h_source.html#l00071">71</a> of file <a class="el" href="_i_v_smoke_c_s_m_renderer_8h_source.html">IVSmokeCSMRenderer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_c_s_m_renderer_8h_source.html#l00065">65</a> of file <a class="el" href="_i_v_smoke_c_s_m_renderer_8h_source.html">IVSmokeCSMRenderer.h</a>.</p>
 
 </div>
 </div>
@@ -181,7 +178,7 @@ sampling happened at START of next frame, but that's not the case here.</h1>
 </div><div class="memdoc">
 <p>Cascade index (0 = nearest, N-1 = farthest). </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_c_s_m_renderer_8h_source.html#l00040">40</a> of file <a class="el" href="_i_v_smoke_c_s_m_renderer_8h_source.html">IVSmokeCSMRenderer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_c_s_m_renderer_8h_source.html#l00034">34</a> of file <a class="el" href="_i_v_smoke_c_s_m_renderer_8h_source.html">IVSmokeCSMRenderer.h</a>.</p>
 
 </div>
 </div>
@@ -198,7 +195,7 @@ sampling happened at START of next frame, but that's not the case here.</h1>
 </div><div class="memdoc">
 <p>Depth render target (R32F). </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_c_s_m_renderer_8h_source.html#l00065">65</a> of file <a class="el" href="_i_v_smoke_c_s_m_renderer_8h_source.html">IVSmokeCSMRenderer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_c_s_m_renderer_8h_source.html#l00059">59</a> of file <a class="el" href="_i_v_smoke_c_s_m_renderer_8h_source.html">IVSmokeCSMRenderer.h</a>.</p>
 
 </div>
 </div>
@@ -214,7 +211,7 @@ sampling happened at START of next frame, but that's not the case here.</h1>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_c_s_m_renderer_8h_source.html#l00044">44</a> of file <a class="el" href="_i_v_smoke_c_s_m_renderer_8h_source.html">IVSmokeCSMRenderer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_c_s_m_renderer_8h_source.html#l00038">38</a> of file <a class="el" href="_i_v_smoke_c_s_m_renderer_8h_source.html">IVSmokeCSMRenderer.h</a>.</p>
 
 </div>
 </div>
@@ -231,7 +228,7 @@ sampling happened at START of next frame, but that's not the case here.</h1>
 </div><div class="memdoc">
 <p>Frame number when last captured. </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_c_s_m_renderer_8h_source.html#l00077">77</a> of file <a class="el" href="_i_v_smoke_c_s_m_renderer_8h_source.html">IVSmokeCSMRenderer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_c_s_m_renderer_8h_source.html#l00071">71</a> of file <a class="el" href="_i_v_smoke_c_s_m_renderer_8h_source.html">IVSmokeCSMRenderer.h</a>.</p>
 
 </div>
 </div>
@@ -248,7 +245,7 @@ sampling happened at START of next frame, but that's not the case here.</h1>
 </div><div class="memdoc">
 <p>Light camera forward direction (light travel direction, opposite of light source). </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_c_s_m_renderer_8h_source.html#l00059">59</a> of file <a class="el" href="_i_v_smoke_c_s_m_renderer_8h_source.html">IVSmokeCSMRenderer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_c_s_m_renderer_8h_source.html#l00053">53</a> of file <a class="el" href="_i_v_smoke_c_s_m_renderer_8h_source.html">IVSmokeCSMRenderer.h</a>.</p>
 
 </div>
 </div>
@@ -265,7 +262,7 @@ sampling happened at START of next frame, but that's not the case here.</h1>
 </div><div class="memdoc">
 <p>Light camera position for this cascade (after texel snapping). </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_c_s_m_renderer_8h_source.html#l00056">56</a> of file <a class="el" href="_i_v_smoke_c_s_m_renderer_8h_source.html">IVSmokeCSMRenderer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_c_s_m_renderer_8h_source.html#l00050">50</a> of file <a class="el" href="_i_v_smoke_c_s_m_renderer_8h_source.html">IVSmokeCSMRenderer.h</a>.</p>
 
 </div>
 </div>
@@ -282,7 +279,7 @@ sampling happened at START of next frame, but that's not the case here.</h1>
 </div><div class="memdoc">
 <p>View distance range for this cascade. </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_c_s_m_renderer_8h_source.html#l00043">43</a> of file <a class="el" href="_i_v_smoke_c_s_m_renderer_8h_source.html">IVSmokeCSMRenderer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_c_s_m_renderer_8h_source.html#l00037">37</a> of file <a class="el" href="_i_v_smoke_c_s_m_renderer_8h_source.html">IVSmokeCSMRenderer.h</a>.</p>
 
 </div>
 </div>
@@ -299,7 +296,7 @@ sampling happened at START of next frame, but that's not the case here.</h1>
 </div><div class="memdoc">
 <p>Orthographic projection width for this cascade. </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_c_s_m_renderer_8h_source.html#l00050">50</a> of file <a class="el" href="_i_v_smoke_c_s_m_renderer_8h_source.html">IVSmokeCSMRenderer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_c_s_m_renderer_8h_source.html#l00044">44</a> of file <a class="el" href="_i_v_smoke_c_s_m_renderer_8h_source.html">IVSmokeCSMRenderer.h</a>.</p>
 
 </div>
 </div>
@@ -316,7 +313,7 @@ sampling happened at START of next frame, but that's not the case here.</h1>
 </div><div class="memdoc">
 <p>View-projection matrix for world-to-light-clip transform. </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_c_s_m_renderer_8h_source.html#l00053">53</a> of file <a class="el" href="_i_v_smoke_c_s_m_renderer_8h_source.html">IVSmokeCSMRenderer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_c_s_m_renderer_8h_source.html#l00047">47</a> of file <a class="el" href="_i_v_smoke_c_s_m_renderer_8h_source.html">IVSmokeCSMRenderer.h</a>.</p>
 
 </div>
 </div>
@@ -333,7 +330,7 @@ sampling happened at START of next frame, but that's not the case here.</h1>
 </div><div class="memdoc">
 <p>Variance Shadow Map render target (RG32F). </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_c_s_m_renderer_8h_source.html#l00068">68</a> of file <a class="el" href="_i_v_smoke_c_s_m_renderer_8h_source.html">IVSmokeCSMRenderer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_c_s_m_renderer_8h_source.html#l00062">62</a> of file <a class="el" href="_i_v_smoke_c_s_m_renderer_8h_source.html">IVSmokeCSMRenderer.h</a>.</p>
 
 </div>
 </div>

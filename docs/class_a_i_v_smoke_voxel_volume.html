@@ -185,7 +185,7 @@ Protected Member Functions</h2></td></tr>
 <div class="textblock"><p>The core volumetric actor that simulates dynamic smoke expansion using a deterministic voxel-based flood-fill algorithm.</p>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md4"></a>
 Overview</h2>
-<p>This actor generates a 3D grid of voxels that expand outward from the center, navigating around obstacles defined by the collision settings. The simulation is*deterministic, ensuring the same shape and timing across both Server and Clients without replicating individual voxel data.</p>
+<p>This actor generates a 3D grid of voxels that expand outward from the center, navigating around obstacles defined by the collision settings. The simulation is deterministic, ensuring the same shape and timing across both Server and Clients without replicating individual voxel data.</p>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md5"></a>
 Simulation Lifecycle</h2>
 <p>The simulation state machine progresses based on the sum of duration and fade settings:</p><ol type="1">
@@ -219,7 +219,7 @@ Network &amp; Execution</h2>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_voxel_volume_8cpp_source.html#l00039">39</a> of file <a class="el" href="_i_v_smoke_voxel_volume_8cpp_source.html">IVSmokeVoxelVolume.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_voxel_volume_8cpp_source.html#l00139">139</a> of file <a class="el" href="_i_v_smoke_voxel_volume_8cpp_source.html">IVSmokeVoxelVolume.cpp</a>.</p>
 
 </div>
 </div>
@@ -247,7 +247,7 @@ Network &amp; Execution</h2>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_voxel_volume_8cpp_source.html#l00066">66</a> of file <a class="el" href="_i_v_smoke_voxel_volume_8cpp_source.html">IVSmokeVoxelVolume.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_voxel_volume_8cpp_source.html#l00166">166</a> of file <a class="el" href="_i_v_smoke_voxel_volume_8cpp_source.html">IVSmokeVoxelVolume.cpp</a>.</p>
 
 </div>
 </div>
@@ -302,7 +302,7 @@ Network &amp; Execution</h2>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_voxel_volume_8cpp_source.html#l00092">92</a> of file <a class="el" href="_i_v_smoke_voxel_volume_8cpp_source.html">IVSmokeVoxelVolume.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_voxel_volume_8cpp_source.html#l00192">192</a> of file <a class="el" href="_i_v_smoke_voxel_volume_8cpp_source.html">IVSmokeVoxelVolume.cpp</a>.</p>
 
 </div>
 </div>
@@ -378,7 +378,7 @@ Network &amp; Execution</h2>
 </div><div class="memdoc">
 <p>Returns the component responsible for handling physical interactions and collision queries. Caches the result to avoid repeated lookups. Returns nullptr if the component is missing. </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_voxel_volume_8cpp_source.html#l00968">968</a> of file <a class="el" href="_i_v_smoke_voxel_volume_8cpp_source.html">IVSmokeVoxelVolume.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_voxel_volume_8cpp_source.html#l01072">1072</a> of file <a class="el" href="_i_v_smoke_voxel_volume_8cpp_source.html">IVSmokeVoxelVolume.cpp</a>.</p>
 
 </div>
 </div>
@@ -482,7 +482,7 @@ Network &amp; Execution</h2>
 </div><div class="memdoc">
 <p>Returns the component responsible for generating holes (negative space) in the smoke. Caches the result to avoid repeated lookups. Returns nullptr if the component is missing. </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_voxel_volume_8cpp_source.html#l00958">958</a> of file <a class="el" href="_i_v_smoke_voxel_volume_8cpp_source.html">IVSmokeVoxelVolume.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_voxel_volume_8cpp_source.html#l01062">1062</a> of file <a class="el" href="_i_v_smoke_voxel_volume_8cpp_source.html">IVSmokeVoxelVolume.cpp</a>.</p>
 
 </div>
 </div>
@@ -502,7 +502,7 @@ Network &amp; Execution</h2>
 </div><div class="memdoc">
 <p>Returns the RHI texture resource from the HoleGeneratorComponent, if available. </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_voxel_volume_8cpp_source.html#l00978">978</a> of file <a class="el" href="_i_v_smoke_voxel_volume_8cpp_source.html">IVSmokeVoxelVolume.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_voxel_volume_8cpp_source.html#l01082">1082</a> of file <a class="el" href="_i_v_smoke_voxel_volume_8cpp_source.html">IVSmokeVoxelVolume.cpp</a>.</p>
 
 </div>
 </div>
@@ -529,7 +529,7 @@ Network &amp; Execution</h2>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_voxel_volume_8cpp_source.html#l00100">100</a> of file <a class="el" href="_i_v_smoke_voxel_volume_8cpp_source.html">IVSmokeVoxelVolume.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_voxel_volume_8cpp_source.html#l00200">200</a> of file <a class="el" href="_i_v_smoke_voxel_volume_8cpp_source.html">IVSmokeVoxelVolume.cpp</a>.</p>
 
 </div>
 </div>
@@ -577,7 +577,7 @@ Network &amp; Execution</h2>
 </div><div class="memdoc">
 <p>Returns the synchronized world time in seconds. Handles network time offsets to ensure clients see the simulation at the same progress as the server. </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_voxel_volume_8cpp_source.html#l00987">987</a> of file <a class="el" href="_i_v_smoke_voxel_volume_8cpp_source.html">IVSmokeVoxelVolume.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_voxel_volume_8cpp_source.html#l01091">1091</a> of file <a class="el" href="_i_v_smoke_voxel_volume_8cpp_source.html">IVSmokeVoxelVolume.cpp</a>.</p>
 
 </div>
 </div>
@@ -765,7 +765,7 @@ Network &amp; Execution</h2>
 </div><div class="memdoc">
 <p>Allocates memory for the voxel grid based on <span class="tt"><a class="el" href="#a9ac65f3432cebe1270ec362166de076f">VolumeExtent</a></span>. Automatically called on BeginPlay. Can be called manually to resize the grid at runtime, </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_voxel_volume_8cpp_source.html#l00237">237</a> of file <a class="el" href="_i_v_smoke_voxel_volume_8cpp_source.html">IVSmokeVoxelVolume.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_voxel_volume_8cpp_source.html#l00341">341</a> of file <a class="el" href="_i_v_smoke_voxel_volume_8cpp_source.html">IVSmokeVoxelVolume.cpp</a>.</p>
 
 </div>
 </div>
@@ -890,7 +890,7 @@ Network &amp; Execution</h2>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_voxel_volume_8cpp_source.html#l00163">163</a> of file <a class="el" href="_i_v_smoke_voxel_volume_8cpp_source.html">IVSmokeVoxelVolume.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_voxel_volume_8cpp_source.html#l00267">267</a> of file <a class="el" href="_i_v_smoke_voxel_volume_8cpp_source.html">IVSmokeVoxelVolume.cpp</a>.</p>
 
 </div>
 </div>
@@ -928,7 +928,7 @@ Network &amp; Execution</h2>
 </div><div class="memdoc">
 <p>Returns true if this volume should be rendered. Used by SceneViewExtension to filter active volumes without explicit registration. </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_voxel_volume_8cpp_source.html#l00918">918</a> of file <a class="el" href="_i_v_smoke_voxel_volume_8cpp_source.html">IVSmokeVoxelVolume.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_voxel_volume_8cpp_source.html#l01022">1022</a> of file <a class="el" href="_i_v_smoke_voxel_volume_8cpp_source.html">IVSmokeVoxelVolume.cpp</a>.</p>
 
 </div>
 </div>
@@ -955,7 +955,7 @@ Network &amp; Execution</h2>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_voxel_volume_8cpp_source.html#l00154">154</a> of file <a class="el" href="_i_v_smoke_voxel_volume_8cpp_source.html">IVSmokeVoxelVolume.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_voxel_volume_8cpp_source.html#l00258">258</a> of file <a class="el" href="_i_v_smoke_voxel_volume_8cpp_source.html">IVSmokeVoxelVolume.cpp</a>.</p>
 
 </div>
 </div>
@@ -975,7 +975,7 @@ Network &amp; Execution</h2>
 </div><div class="memdoc">
 <p>Runs a preview of the simulation directly in the Editor viewport without starting a Play In Editor (PIE) session. Use this to quickly iterate on parameters like <span class="tt"><a class="el" href="#a7f6f92c9a2150fd42ed349805395f7f2">ExpansionDuration</a></span>, <span class="tt">Noise</span>, and <span class="tt">Curves</span>. </p><dl class="section note"><dt>Note</dt><dd>This resets the current simulation state. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_voxel_volume_8cpp_source.html#l01012">1012</a> of file <a class="el" href="_i_v_smoke_voxel_volume_8cpp_source.html">IVSmokeVoxelVolume.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_voxel_volume_8cpp_source.html#l01116">1116</a> of file <a class="el" href="_i_v_smoke_voxel_volume_8cpp_source.html">IVSmokeVoxelVolume.cpp</a>.</p>
 
 </div>
 </div>
@@ -1013,7 +1013,7 @@ Network &amp; Execution</h2>
 </div><div class="memdoc">
 <p>Stops the current editor preview simulation and clears all generated voxel data. Returns the actor to an Idle state. </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_voxel_volume_8cpp_source.html#l01026">1026</a> of file <a class="el" href="_i_v_smoke_voxel_volume_8cpp_source.html">IVSmokeVoxelVolume.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_voxel_volume_8cpp_source.html#l01130">1130</a> of file <a class="el" href="_i_v_smoke_voxel_volume_8cpp_source.html">IVSmokeVoxelVolume.cpp</a>.</p>
 
 </div>
 </div>
@@ -1064,7 +1064,7 @@ Network &amp; Execution</h2>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_voxel_volume_8cpp_source.html#l00107">107</a> of file <a class="el" href="_i_v_smoke_voxel_volume_8cpp_source.html">IVSmokeVoxelVolume.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_voxel_volume_8cpp_source.html#l00207">207</a> of file <a class="el" href="_i_v_smoke_voxel_volume_8cpp_source.html">IVSmokeVoxelVolume.cpp</a>.</p>
 
 </div>
 </div>

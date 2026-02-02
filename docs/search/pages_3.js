@@ -1,6 +1,5 @@
 var searchData=
 [
   ['4_20api_20reference_0',['4. API Reference',['../index.html#autotoc_md22',1,'']]],
-  ['4_20finished_1',['4. Finished',['../md_pages_2_voxel_volume_2_voxel_volume_guide.html#autotoc_md146',1,'']]],
-  ['4_3a_20enable_20project_20custom_20depth_2',['Step 4: Enable Project Custom Depth',['../md_pages_2_global_settings_2_global_settings_guide.html#autotoc_md93',1,'']]]
+  ['4_20finished_1',['4. Finished',['../md_pages_2_voxel_volume_2_voxel_volume_guide.html#autotoc_md140',1,'']]]
 ];

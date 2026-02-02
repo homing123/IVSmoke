@@ -7,5 +7,6 @@ var searchData=
   ['uivsmokeholerequestcomponent_4',['UIVSmokeHoleRequestComponent',['../class_u_i_v_smoke_hole_request_component.html',1,'']]],
   ['uivsmokesettings_5',['UIVSmokeSettings',['../class_u_i_v_smoke_settings.html',1,'']]],
   ['uivsmokesmokepreset_6',['UIVSmokeSmokePreset',['../class_u_i_v_smoke_smoke_preset.html',1,'']]],
-  ['uivsmokevisualmaterialpreset_7',['UIVSmokeVisualMaterialPreset',['../class_u_i_v_smoke_visual_material_preset.html',1,'']]]
+  ['uivsmokevisualmaterialpreset_7',['UIVSmokeVisualMaterialPreset',['../class_u_i_v_smoke_visual_material_preset.html',1,'']]],
+  ['umaterialexpressionivsmoke_5ftexturesample_8',['UMaterialExpressionIVSmoke_TextureSample',['../class_u_material_expression_i_v_smoke___texture_sample.html',1,'']]]
 ];

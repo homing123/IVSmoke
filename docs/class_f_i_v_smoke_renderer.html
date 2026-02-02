@@ -98,7 +98,7 @@ Collaboration diagram for FIVSmokeRenderer:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_f_i_v_smoke_renderer__coll__graph.png" border="0" usemap="#a_f_i_v_smoke_renderer_coll__map" loading="lazy" alt="Collaboration graph"/></div>
 <map name="a_f_i_v_smoke_renderer_coll__map" id="a_f_i_v_smoke_renderer_coll__map">
-<area shape="rect" title=" " alt="" coords="5,5,172,245"/>
+<area shape="rect" title=" " alt="" coords="5,5,179,288"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -112,6 +112,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8af929a40d0d86ce763189f0931a8642" id="r_a8af929a40d0d86ce763189f0931a8642"><td class="memItemLeft"><a class="el" href="struct_f_i_v_smoke_packed_render_data.html">FIVSmokePackedRenderData</a>&#160;</td><td class="memItemRight"><a class="el" href="#a8af929a40d0d86ce763189f0931a8642">PrepareRenderData</a> (const TArray&lt; <a class="el" href="class_a_i_v_smoke_voxel_volume.html">AIVSmokeVoxelVolume</a> * &gt; &amp;InVolumes, const FVector &amp;CameraPosition)</td></tr>
 <tr class="memitem:a07ee517d53c93cd4daceb9c5f977bb74" id="r_a07ee517d53c93cd4daceb9c5f977bb74"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a07ee517d53c93cd4daceb9c5f977bb74">SetCachedRenderData</a> (<a class="el" href="struct_f_i_v_smoke_packed_render_data.html">FIVSmokePackedRenderData</a> &amp;&amp;InRenderData)</td></tr>
 <tr class="memitem:a434b16865d2b3c9b26adf6843218b476" id="r_a434b16865d2b3c9b26adf6843218b476"><td class="memItemLeft">FScreenPassTexture&#160;</td><td class="memItemRight"><a class="el" href="#a434b16865d2b3c9b26adf6843218b476">Render</a> (FRDGBuilder &amp;GraphBuilder, const FSceneView &amp;View, const FPostProcessMaterialInputs &amp;Inputs)</td></tr>
+<tr class="memitem:a7d68bc8169845458aaafe58eab8d906d" id="r_a7d68bc8169845458aaafe58eab8d906d"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a7d68bc8169845458aaafe58eab8d906d">RunPrePassPipeline</a> (FRDGBuilder &amp;GraphBuilder, const FSceneView &amp;View, const struct FRenderTargetBindingSlots &amp;RenderTargets, TRDGUniformBufferRef&lt; FSceneTextureUniformParameters &gt; SceneTextures)</td></tr>
+<tr class="memitem:a3695c0f263355fb32ff0d5c8ed5cd448" id="r_a3695c0f263355fb32ff0d5c8ed5cd448"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a3695c0f263355fb32ff0d5c8ed5cd448">ClearFrameViewCaches</a> ()</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -124,7 +126,7 @@ Static Public Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Manages registered smoke volumes and handles rendering. Owns shared rendering resources (noise volume) and reads settings from <a class="el" href="class_u_i_v_smoke_settings.html">UIVSmokeSettings</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_renderer_8h_source.html#l00157">157</a> of file <a class="el" href="_i_v_smoke_renderer_8h_source.html">IVSmokeRenderer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_renderer_8h_source.html#l00156">156</a> of file <a class="el" href="_i_v_smoke_renderer_8h_source.html">IVSmokeRenderer.h</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="a3eadda520ef7993be400be4653319ab0" name="a3eadda520ef7993be400be4653319ab0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3eadda520ef7993be400be4653319ab0">&#9670;&#160;</a></span>bIsServerTimeSynced()</h2>
@@ -150,7 +152,35 @@ Static Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Check if server time offset was set. </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_renderer_8h_source.html#l00175">175</a> of file <a class="el" href="_i_v_smoke_renderer_8h_source.html">IVSmokeRenderer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_renderer_8h_source.html#l00174">174</a> of file <a class="el" href="_i_v_smoke_renderer_8h_source.html">IVSmokeRenderer.h</a>.</p>
+
+</div>
+</div>
+<a id="a3695c0f263355fb32ff0d5c8ed5cd448" name="a3695c0f263355fb32ff0d5c8ed5cd448"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3695c0f263355fb32ff0d5c8ed5cd448">&#9670;&#160;</a></span>ClearFrameViewCaches()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FIVSmokeRenderer::ClearFrameViewCaches </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Clear frame view caches. Called at end of frame from SceneViewExtension. </p>
+
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_renderer_8h_source.html#l00450">450</a> of file <a class="el" href="_i_v_smoke_renderer_8h_source.html">IVSmokeRenderer.h</a>.</p>
 
 </div>
 </div>
@@ -177,7 +207,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_renderer_8cpp_source.html#l00031">31</a> of file <a class="el" href="_i_v_smoke_renderer_8cpp_source.html">IVSmokeRenderer.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_renderer_8cpp_source.html#l00033">33</a> of file <a class="el" href="_i_v_smoke_renderer_8cpp_source.html">IVSmokeRenderer.cpp</a>.</p>
 
 </div>
 </div>
@@ -197,7 +227,7 @@ Static Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Initialize renderer resources. Called on first use or settings change. </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_renderer_8cpp_source.html#l00048">48</a> of file <a class="el" href="_i_v_smoke_renderer_8cpp_source.html">IVSmokeRenderer.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_renderer_8cpp_source.html#l00050">50</a> of file <a class="el" href="_i_v_smoke_renderer_8cpp_source.html">IVSmokeRenderer.cpp</a>.</p>
 
 </div>
 </div>
@@ -225,7 +255,7 @@ Static Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Check if renderer is initialized with valid resources. </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_renderer_8h_source.html#l00172">172</a> of file <a class="el" href="_i_v_smoke_renderer_8h_source.html">IVSmokeRenderer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_renderer_8h_source.html#l00171">171</a> of file <a class="el" href="_i_v_smoke_renderer_8h_source.html">IVSmokeRenderer.h</a>.</p>
 
 </div>
 </div>
@@ -257,7 +287,7 @@ Static Public Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Packed render data ready for Render Thread </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_renderer_8cpp_source.html#l00298">298</a> of file <a class="el" href="_i_v_smoke_renderer_8cpp_source.html">IVSmokeRenderer.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_renderer_8cpp_source.html#l00303">303</a> of file <a class="el" href="_i_v_smoke_renderer_8cpp_source.html">IVSmokeRenderer.cpp</a>.</p>
 
 </div>
 </div>
@@ -295,7 +325,51 @@ Static Public Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Output texture after smoke rendering </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_renderer_8cpp_source.html#l00678">678</a> of file <a class="el" href="_i_v_smoke_renderer_8cpp_source.html">IVSmokeRenderer.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_renderer_8cpp_source.html#l00681">681</a> of file <a class="el" href="_i_v_smoke_renderer_8cpp_source.html">IVSmokeRenderer.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a7d68bc8169845458aaafe58eab8d906d" name="a7d68bc8169845458aaafe58eab8d906d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d68bc8169845458aaafe58eab8d906d">&#9670;&#160;</a></span>RunPrePassPipeline()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FIVSmokeRenderer::RunPrePassPipeline </td>
+          <td>(</td>
+          <td class="paramtype">FRDGBuilder &amp;</td>          <td class="paramname"><span class="paramname"><em>GraphBuilder</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const FSceneView &amp;</td>          <td class="paramname"><span class="paramname"><em>View</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const struct FRenderTargetBindingSlots &amp;</td>          <td class="paramname"><span class="paramname"><em>RenderTargets</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">TRDGUniformBufferRef&lt; FSceneTextureUniformParameters &gt;</td>          <td class="paramname"><span class="paramname"><em>SceneTextures</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Execute Pre-pass pipeline: Ray March → Upscale → UpsampleFilter → Depth Write. Called from PostRenderBasePassDeferred_RenderThread BEFORE Translucent Pass. Results are cached for Post-process Visual/Composite passes.</p>
+<p>Pipeline order ensures Ray March reads only opaque depth (before smoke depth write).</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">GraphBuilder</td><td>RDG builder </td></tr>
+    <tr><td class="paramname">View</td><td>Current scene view </td></tr>
+    <tr><td class="paramname">RenderTargets</td><td>Render target slots (for depth write) </td></tr>
+    <tr><td class="paramname">SceneTextures</td><td>Scene texture uniform buffer (for depth sampling in ray march) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_renderer_8cpp_source.html#l01601">1601</a> of file <a class="el" href="_i_v_smoke_renderer_8cpp_source.html">IVSmokeRenderer.cpp</a>.</p>
 
 </div>
 </div>
@@ -323,7 +397,7 @@ Static Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Set cached render data for next frame. Called from Render Thread via ENQUEUE_RENDER_COMMAND. </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_renderer_8h_source.html#l00202">202</a> of file <a class="el" href="_i_v_smoke_renderer_8h_source.html">IVSmokeRenderer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_renderer_8h_source.html#l00201">201</a> of file <a class="el" href="_i_v_smoke_renderer_8h_source.html">IVSmokeRenderer.h</a>.</p>
 
 </div>
 </div>
@@ -351,7 +425,7 @@ Static Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>SetServerTimeOffset for smoke wind animation. </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_renderer_8h_source.html#l00178">178</a> of file <a class="el" href="_i_v_smoke_renderer_8h_source.html">IVSmokeRenderer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_renderer_8h_source.html#l00177">177</a> of file <a class="el" href="_i_v_smoke_renderer_8h_source.html">IVSmokeRenderer.h</a>.</p>
 
 </div>
 </div>
@@ -371,7 +445,7 @@ Static Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Release renderer resources. </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_renderer_8cpp_source.html#l00060">60</a> of file <a class="el" href="_i_v_smoke_renderer_8cpp_source.html">IVSmokeRenderer.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_renderer_8cpp_source.html#l00062">62</a> of file <a class="el" href="_i_v_smoke_renderer_8cpp_source.html">IVSmokeRenderer.cpp</a>.</p>
 
 </div>
 </div>
@@ -397,7 +471,7 @@ Static Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Maximum number of volumes supported for rendering. </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_renderer_8h_source.html#l00184">184</a> of file <a class="el" href="_i_v_smoke_renderer_8h_source.html">IVSmokeRenderer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_renderer_8h_source.html#l00183">183</a> of file <a class="el" href="_i_v_smoke_renderer_8h_source.html">IVSmokeRenderer.h</a>.</p>
 
 </div>
 </div>

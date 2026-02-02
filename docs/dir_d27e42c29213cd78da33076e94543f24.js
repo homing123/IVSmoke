@@ -18,5 +18,6 @@ var dir_d27e42c29213cd78da33076e94543f24 =
     [ "IVSmokeSmokePreset.h", "_i_v_smoke_smoke_preset_8h_source.html", null ],
     [ "IVSmokeVisualMaterialPreset.h", "_i_v_smoke_visual_material_preset_8h_source.html", null ],
     [ "IVSmokeVoxelVolume.h", "_i_v_smoke_voxel_volume_8h_source.html", null ],
-    [ "IVSmokeVSMProcessor.h", "_i_v_smoke_v_s_m_processor_8h_source.html", null ]
+    [ "IVSmokeVSMProcessor.h", "_i_v_smoke_v_s_m_processor_8h_source.html", null ],
+    [ "MaterialExpressionIVSmoke_TextureSample.h", "_material_expression_i_v_smoke___texture_sample_8h_source.html", null ]
 ];

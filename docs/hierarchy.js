@@ -12,8 +12,8 @@ var hierarchy =
     [ "FGlobalShader", null, [
       [ "FIVSmokeCompositePS", "class_f_i_v_smoke_composite_p_s.html", null ],
       [ "FIVSmokeCopyPS", "class_f_i_v_smoke_copy_p_s.html", null ],
-      [ "FIVSmokeDepthSortedCompositePS", "class_f_i_v_smoke_depth_sorted_composite_p_s.html", null ],
       [ "FIVSmokeDepthToVarianceCS", "class_f_i_v_smoke_depth_to_variance_c_s.html", null ],
+      [ "FIVSmokeDepthWritePS", "class_f_i_v_smoke_depth_write_p_s.html", null ],
       [ "FIVSmokeHoleBlurCS", "class_f_i_v_smoke_hole_blur_c_s.html", null ],
       [ "FIVSmokeHoleCarveCS", "class_f_i_v_smoke_hole_carve_c_s.html", null ],
       [ "FIVSmokeMultiVolumeRayMarchCS", "class_f_i_v_smoke_multi_volume_ray_march_c_s.html", null ],
@@ -21,7 +21,6 @@ var hierarchy =
       [ "FIVSmokeOccupancyBuildCS", "class_f_i_v_smoke_occupancy_build_c_s.html", null ],
       [ "FIVSmokeStructuredToTextureCS", "class_f_i_v_smoke_structured_to_texture_c_s.html", null ],
       [ "FIVSmokeTileSetupCS", "class_f_i_v_smoke_tile_setup_c_s.html", null ],
-      [ "FIVSmokeTranslucencyCompositePS", "class_f_i_v_smoke_translucency_composite_p_s.html", null ],
       [ "FIVSmokeUpsampleFilterPS", "class_f_i_v_smoke_upsample_filter_p_s.html", null ],
       [ "FIVSmokeVSMBlurCS", "class_f_i_v_smoke_v_s_m_blur_c_s.html", null ],
       [ "FIVSmokeVoxelFXAACS", "class_f_i_v_smoke_voxel_f_x_a_a_c_s.html", null ]
@@ -66,6 +65,9 @@ var hierarchy =
     ] ],
     [ "UDeveloperSettings", null, [
       [ "UIVSmokeSettings", "class_u_i_v_smoke_settings.html", null ]
+    ] ],
+    [ "UMaterialExpression", null, [
+      [ "UMaterialExpressionIVSmoke_TextureSample", "class_u_material_expression_i_v_smoke___texture_sample.html", null ]
     ] ],
     [ "UPrimaryDataAsset", null, [
       [ "UIVSmokeHolePreset", "class_u_i_v_smoke_hole_preset.html", null ],

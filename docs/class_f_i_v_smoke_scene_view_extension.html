@@ -98,9 +98,9 @@ Inheritance diagram for FIVSmokeSceneViewExtension:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_f_i_v_smoke_scene_view_extension__inherit__graph.png" border="0" usemap="#a_f_i_v_smoke_scene_view_extension_inherit__map" loading="lazy" alt="Inheritance graph"/></div>
 <map name="a_f_i_v_smoke_scene_view_extension_inherit__map" id="a_f_i_v_smoke_scene_view_extension_inherit__map">
-<area shape="rect" title=" " alt="" coords="5,123,223,357"/>
+<area shape="rect" title=" " alt="" coords="5,123,223,432"/>
 <area shape="rect" title=" " alt="" coords="28,5,201,75"/>
-<area shape="poly" title=" " alt="" coords="115,87,117,123,112,122,114,92"/>
+<area shape="poly" title=" " alt="" coords="115,87,117,123,112,123,114,92"/>
 </map>
 </div>
 <div class="dynheader">
@@ -108,9 +108,9 @@ Collaboration diagram for FIVSmokeSceneViewExtension:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_f_i_v_smoke_scene_view_extension__coll__graph.png" border="0" usemap="#a_f_i_v_smoke_scene_view_extension_coll__map" loading="lazy" alt="Collaboration graph"/></div>
 <map name="a_f_i_v_smoke_scene_view_extension_coll__map" id="a_f_i_v_smoke_scene_view_extension_coll__map">
-<area shape="rect" title=" " alt="" coords="5,123,223,357"/>
+<area shape="rect" title=" " alt="" coords="5,123,223,432"/>
 <area shape="rect" title=" " alt="" coords="28,5,201,75"/>
-<area shape="poly" title=" " alt="" coords="115,87,117,123,112,122,114,92"/>
+<area shape="poly" title=" " alt="" coords="115,87,117,123,112,123,114,92"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -122,6 +122,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac2a2dd8ddf1850a8fa7865f766cfcec1" id="r_ac2a2dd8ddf1850a8fa7865f766cfcec1"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#ac2a2dd8ddf1850a8fa7865f766cfcec1">BeginRenderViewFamily</a> (FSceneViewFamily &amp;InViewFamily) override</td></tr>
 <tr class="memitem:a04226360977ed622d0a3aa2fd0244253" id="r_a04226360977ed622d0a3aa2fd0244253"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#a04226360977ed622d0a3aa2fd0244253">SubscribeToPostProcessingPass</a> (EPostProcessingPass Pass, const FSceneView &amp;InView, FPostProcessingPassDelegateArray &amp;InOutPassCallbacks, bool bIsPassEnabled) override</td></tr>
 <tr class="memitem:aa75ad9e196c5fe38b0fde87833cc973e" id="r_aa75ad9e196c5fe38b0fde87833cc973e"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="#aa75ad9e196c5fe38b0fde87833cc973e">IsActiveThisFrame_Internal</a> (const FSceneViewExtensionContext &amp;Context) const override</td></tr>
+<tr class="memitem:adef8424acc743da05055222094bca239" id="r_adef8424acc743da05055222094bca239"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#adef8424acc743da05055222094bca239">PostRenderBasePassDeferred_RenderThread</a> (FRDGBuilder &amp;GraphBuilder, FSceneView &amp;InView, const FRenderTargetBindingSlots &amp;RenderTargets, TRDGUniformBufferRef&lt; FSceneTextureUniformParameters &gt; SceneTextures) override</td></tr>
+<tr class="memitem:a30d8f4dee64afad171c8ed61150299cb" id="r_a30d8f4dee64afad171c8ed61150299cb"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#a30d8f4dee64afad171c8ed61150299cb">PostRenderViewFamily_RenderThread</a> (FRDGBuilder &amp;GraphBuilder, FSceneViewFamily &amp;InViewFamily) override</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -131,7 +133,7 @@ Static Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Scene view extension for <a class="el" href="class_i_v_smoke.html">IVSmoke</a> post-process hook. Delegates actual rendering to <a class="el" href="class_f_i_v_smoke_renderer.html">FIVSmokeRenderer</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_scene_view_extension_8h_source.html#l00015">15</a> of file <a class="el" href="_i_v_smoke_scene_view_extension_8h_source.html">IVSmokeSceneViewExtension.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_scene_view_extension_8h_source.html#l00018">18</a> of file <a class="el" href="_i_v_smoke_scene_view_extension_8h_source.html">IVSmokeSceneViewExtension.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a7be2daf0114e454b4644272311d9f896" name="a7be2daf0114e454b4644272311d9f896"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7be2daf0114e454b4644272311d9f896">&#9670;&#160;</a></span>FIVSmokeSceneViewExtension()</h2>
@@ -148,7 +150,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_scene_view_extension_8cpp_source.html#l00015">15</a> of file <a class="el" href="_i_v_smoke_scene_view_extension_8cpp_source.html">IVSmokeSceneViewExtension.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_scene_view_extension_8cpp_source.html#l00019">19</a> of file <a class="el" href="_i_v_smoke_scene_view_extension_8cpp_source.html">IVSmokeSceneViewExtension.cpp</a>.</p>
 
 </div>
 </div>
@@ -176,7 +178,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_scene_view_extension_8cpp_source.html#l00033">33</a> of file <a class="el" href="_i_v_smoke_scene_view_extension_8cpp_source.html">IVSmokeSceneViewExtension.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_scene_view_extension_8cpp_source.html#l00037">37</a> of file <a class="el" href="_i_v_smoke_scene_view_extension_8cpp_source.html">IVSmokeSceneViewExtension.cpp</a>.</p>
 
 </div>
 </div>
@@ -204,7 +206,7 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Initialize the scene view extension singleton. </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_scene_view_extension_8cpp_source.html#l00020">20</a> of file <a class="el" href="_i_v_smoke_scene_view_extension_8cpp_source.html">IVSmokeSceneViewExtension.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_scene_view_extension_8cpp_source.html#l00024">24</a> of file <a class="el" href="_i_v_smoke_scene_view_extension_8cpp_source.html">IVSmokeSceneViewExtension.cpp</a>.</p>
 
 </div>
 </div>
@@ -231,7 +233,79 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_scene_view_extension_8cpp_source.html#l00103">103</a> of file <a class="el" href="_i_v_smoke_scene_view_extension_8cpp_source.html">IVSmokeSceneViewExtension.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_scene_view_extension_8cpp_source.html#l00107">107</a> of file <a class="el" href="_i_v_smoke_scene_view_extension_8cpp_source.html">IVSmokeSceneViewExtension.cpp</a>.</p>
+
+</div>
+</div>
+<a id="adef8424acc743da05055222094bca239" name="adef8424acc743da05055222094bca239"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adef8424acc743da05055222094bca239">&#9670;&#160;</a></span>PostRenderBasePassDeferred_RenderThread()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FIVSmokeSceneViewExtension::PostRenderBasePassDeferred_RenderThread </td>
+          <td>(</td>
+          <td class="paramtype">FRDGBuilder &amp;</td>          <td class="paramname"><span class="paramname"><em>GraphBuilder</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FSceneView &amp;</td>          <td class="paramname"><span class="paramname"><em>InView</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const FRenderTargetBindingSlots &amp;</td>          <td class="paramname"><span class="paramname"><em>RenderTargets</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">TRDGUniformBufferRef&lt; FSceneTextureUniformParameters &gt;</td>          <td class="paramname"><span class="paramname"><em>SceneTextures</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_scene_view_extension_8cpp_source.html#l00140">140</a> of file <a class="el" href="_i_v_smoke_scene_view_extension_8cpp_source.html">IVSmokeSceneViewExtension.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a30d8f4dee64afad171c8ed61150299cb" name="a30d8f4dee64afad171c8ed61150299cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30d8f4dee64afad171c8ed61150299cb">&#9670;&#160;</a></span>PostRenderViewFamily_RenderThread()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FIVSmokeSceneViewExtension::PostRenderViewFamily_RenderThread </td>
+          <td>(</td>
+          <td class="paramtype">FRDGBuilder &amp;</td>          <td class="paramname"><span class="paramname"><em>GraphBuilder</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FSceneViewFamily &amp;</td>          <td class="paramname"><span class="paramname"><em>InViewFamily</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_scene_view_extension_8cpp_source.html#l00161">161</a> of file <a class="el" href="_i_v_smoke_scene_view_extension_8cpp_source.html">IVSmokeSceneViewExtension.cpp</a>.</p>
 
 </div>
 </div>
@@ -262,7 +336,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_scene_view_extension_8h_source.html#l00028">28</a> of file <a class="el" href="_i_v_smoke_scene_view_extension_8h_source.html">IVSmokeSceneViewExtension.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_scene_view_extension_8h_source.html#l00031">31</a> of file <a class="el" href="_i_v_smoke_scene_view_extension_8h_source.html">IVSmokeSceneViewExtension.h</a>.</p>
 
 </div>
 </div>
@@ -289,7 +363,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_scene_view_extension_8h_source.html#l00027">27</a> of file <a class="el" href="_i_v_smoke_scene_view_extension_8h_source.html">IVSmokeSceneViewExtension.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_scene_view_extension_8h_source.html#l00030">30</a> of file <a class="el" href="_i_v_smoke_scene_view_extension_8h_source.html">IVSmokeSceneViewExtension.h</a>.</p>
 
 </div>
 </div>
@@ -317,7 +391,7 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Shutdown and release the scene view extension. </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_scene_view_extension_8cpp_source.html#l00028">28</a> of file <a class="el" href="_i_v_smoke_scene_view_extension_8cpp_source.html">IVSmokeSceneViewExtension.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_scene_view_extension_8cpp_source.html#l00032">32</a> of file <a class="el" href="_i_v_smoke_scene_view_extension_8cpp_source.html">IVSmokeSceneViewExtension.cpp</a>.</p>
 
 </div>
 </div>
@@ -358,7 +432,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_scene_view_extension_8cpp_source.html#l00110">110</a> of file <a class="el" href="_i_v_smoke_scene_view_extension_8cpp_source.html">IVSmokeSceneViewExtension.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_scene_view_extension_8cpp_source.html#l00114">114</a> of file <a class="el" href="_i_v_smoke_scene_view_extension_8cpp_source.html">IVSmokeSceneViewExtension.cpp</a>.</p>
 
 </div>
 </div>

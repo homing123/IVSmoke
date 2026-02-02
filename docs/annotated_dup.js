@@ -7,8 +7,8 @@ var annotated_dup =
     [ "FIVSmokeCSMGPUData", "struct_f_i_v_smoke_c_s_m_g_p_u_data.html", "struct_f_i_v_smoke_c_s_m_g_p_u_data" ],
     [ "FIVSmokeCSMRenderer", "class_f_i_v_smoke_c_s_m_renderer.html", "class_f_i_v_smoke_c_s_m_renderer" ],
     [ "FIVSmokeDebugSettings", "struct_f_i_v_smoke_debug_settings.html", "struct_f_i_v_smoke_debug_settings" ],
-    [ "FIVSmokeDepthSortedCompositePS", "class_f_i_v_smoke_depth_sorted_composite_p_s.html", null ],
     [ "FIVSmokeDepthToVarianceCS", "class_f_i_v_smoke_depth_to_variance_c_s.html", null ],
+    [ "FIVSmokeDepthWritePS", "class_f_i_v_smoke_depth_write_p_s.html", null ],
     [ "FIVSmokeHoleArray", "struct_f_i_v_smoke_hole_array.html", "struct_f_i_v_smoke_hole_array" ],
     [ "FIVSmokeHoleBlurCS", "class_f_i_v_smoke_hole_blur_c_s.html", null ],
     [ "FIVSmokeHoleCarveCS", "class_f_i_v_smoke_hole_carve_c_s.html", null ],
@@ -31,7 +31,6 @@ var annotated_dup =
     [ "FIVSmokeStructuredToTextureCS", "class_f_i_v_smoke_structured_to_texture_c_s.html", null ],
     [ "FIVSmokeTileData", "struct_f_i_v_smoke_tile_data.html", "struct_f_i_v_smoke_tile_data" ],
     [ "FIVSmokeTileSetupCS", "class_f_i_v_smoke_tile_setup_c_s.html", null ],
-    [ "FIVSmokeTranslucencyCompositePS", "class_f_i_v_smoke_translucency_composite_p_s.html", null ],
     [ "FIVSmokeUpsampleFilterPS", "class_f_i_v_smoke_upsample_filter_p_s.html", null ],
     [ "FIVSmokeVolumeGPUData", "struct_f_i_v_smoke_volume_g_p_u_data.html", "struct_f_i_v_smoke_volume_g_p_u_data" ],
     [ "FIVSmokeVoxelFXAACS", "class_f_i_v_smoke_voxel_f_x_a_a_c_s.html", null ],
@@ -46,5 +45,6 @@ var annotated_dup =
     [ "UIVSmokeHoleRequestComponent", "class_u_i_v_smoke_hole_request_component.html", "class_u_i_v_smoke_hole_request_component" ],
     [ "UIVSmokeSettings", "class_u_i_v_smoke_settings.html", "class_u_i_v_smoke_settings" ],
     [ "UIVSmokeSmokePreset", "class_u_i_v_smoke_smoke_preset.html", "class_u_i_v_smoke_smoke_preset" ],
-    [ "UIVSmokeVisualMaterialPreset", "class_u_i_v_smoke_visual_material_preset.html", "class_u_i_v_smoke_visual_material_preset" ]
+    [ "UIVSmokeVisualMaterialPreset", "class_u_i_v_smoke_visual_material_preset.html", "class_u_i_v_smoke_visual_material_preset" ],
+    [ "UMaterialExpressionIVSmoke_TextureSample", "class_u_material_expression_i_v_smoke___texture_sample.html", null ]
 ];

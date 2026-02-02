@@ -6,8 +6,8 @@ var searchData=
   ['fivsmokecsmgpudata_3',['FIVSmokeCSMGPUData',['../struct_f_i_v_smoke_c_s_m_g_p_u_data.html',1,'']]],
   ['fivsmokecsmrenderer_4',['FIVSmokeCSMRenderer',['../class_f_i_v_smoke_c_s_m_renderer.html',1,'']]],
   ['fivsmokedebugsettings_5',['FIVSmokeDebugSettings',['../struct_f_i_v_smoke_debug_settings.html',1,'']]],
-  ['fivsmokedepthsortedcompositeps_6',['FIVSmokeDepthSortedCompositePS',['../class_f_i_v_smoke_depth_sorted_composite_p_s.html',1,'']]],
-  ['fivsmokedepthtovariancecs_7',['FIVSmokeDepthToVarianceCS',['../class_f_i_v_smoke_depth_to_variance_c_s.html',1,'']]],
+  ['fivsmokedepthtovariancecs_6',['FIVSmokeDepthToVarianceCS',['../class_f_i_v_smoke_depth_to_variance_c_s.html',1,'']]],
+  ['fivsmokedepthwriteps_7',['FIVSmokeDepthWritePS',['../class_f_i_v_smoke_depth_write_p_s.html',1,'']]],
   ['fivsmokeholearray_8',['FIVSmokeHoleArray',['../struct_f_i_v_smoke_hole_array.html',1,'']]],
   ['fivsmokeholeblurcs_9',['FIVSmokeHoleBlurCS',['../class_f_i_v_smoke_hole_blur_c_s.html',1,'']]],
   ['fivsmokeholecarvecs_10',['FIVSmokeHoleCarveCS',['../class_f_i_v_smoke_hole_carve_c_s.html',1,'']]],
@@ -30,10 +30,9 @@ var searchData=
   ['fivsmokestructuredtotexturecs_27',['FIVSmokeStructuredToTextureCS',['../class_f_i_v_smoke_structured_to_texture_c_s.html',1,'']]],
   ['fivsmoketiledata_28',['FIVSmokeTileData',['../struct_f_i_v_smoke_tile_data.html',1,'']]],
   ['fivsmoketilesetupcs_29',['FIVSmokeTileSetupCS',['../class_f_i_v_smoke_tile_setup_c_s.html',1,'']]],
-  ['fivsmoketranslucencycompositeps_30',['FIVSmokeTranslucencyCompositePS',['../class_f_i_v_smoke_translucency_composite_p_s.html',1,'']]],
-  ['fivsmokeupsamplefilterps_31',['FIVSmokeUpsampleFilterPS',['../class_f_i_v_smoke_upsample_filter_p_s.html',1,'']]],
-  ['fivsmokevolumegpudata_32',['FIVSmokeVolumeGPUData',['../struct_f_i_v_smoke_volume_g_p_u_data.html',1,'']]],
-  ['fivsmokevoxelfxaacs_33',['FIVSmokeVoxelFXAACS',['../class_f_i_v_smoke_voxel_f_x_a_a_c_s.html',1,'']]],
-  ['fivsmokevsmblurcs_34',['FIVSmokeVSMBlurCS',['../class_f_i_v_smoke_v_s_m_blur_c_s.html',1,'']]],
-  ['fivsmokevsmprocessor_35',['FIVSmokeVSMProcessor',['../class_f_i_v_smoke_v_s_m_processor.html',1,'']]]
+  ['fivsmokeupsamplefilterps_30',['FIVSmokeUpsampleFilterPS',['../class_f_i_v_smoke_upsample_filter_p_s.html',1,'']]],
+  ['fivsmokevolumegpudata_31',['FIVSmokeVolumeGPUData',['../struct_f_i_v_smoke_volume_g_p_u_data.html',1,'']]],
+  ['fivsmokevoxelfxaacs_32',['FIVSmokeVoxelFXAACS',['../class_f_i_v_smoke_voxel_f_x_a_a_c_s.html',1,'']]],
+  ['fivsmokevsmblurcs_33',['FIVSmokeVSMBlurCS',['../class_f_i_v_smoke_v_s_m_blur_c_s.html',1,'']]],
+  ['fivsmokevsmprocessor_34',['FIVSmokeVSMProcessor',['../class_f_i_v_smoke_v_s_m_processor.html',1,'']]]
 ];

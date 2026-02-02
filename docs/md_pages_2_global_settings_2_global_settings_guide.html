@@ -366,36 +366,36 @@ GlobalSettings_image8.png</div></div>
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Setting  </th><th class="markdownTableHeadNone">Type  </th><th class="markdownTableHeadNone">Default  </th><th class="markdownTableHeadNone">Description  </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><b>Render Pass</b>  </td><td class="markdownTableBodyNone">Enum  </td><td class="markdownTableBodyNone"><span class="tt">After DOF (Recommended)</span>  </td><td class="markdownTableBodyNone">When in the post-process chain to render smoke.  </td></tr>
-<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><b>Smoke Visual Material</b>  </td><td class="markdownTableBodyNone">Soft Object Path  </td><td class="markdownTableBodyNone">None  </td><td class="markdownTableBodyNone">Optional material for custom smoke visuals.  </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><b>Visual Alpha Type</b>  </td><td class="markdownTableBodyNone">Enum  </td><td class="markdownTableBodyNone"><span class="tt">Use Alpha (0~1)</span>  </td><td class="markdownTableBodyNone">How alpha blending is calculated.  </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><b>Low Opacity Remap Threshold</b>  </td><td class="markdownTableBodyNone">float  </td><td class="markdownTableBodyNone">0.02  </td><td class="markdownTableBodyNone">Remaps low opacity values to prevent HDR burn-in artifacts.  </td></tr>
 </table>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md75"></a>
-Render Pass Options</h1>
+Advanced Options (Show Advanced Options = true)</h1>
 <table class="markdownTable">
 <tr class="markdownTableHead">
-<th class="markdownTableHeadNone">Option  </th><th class="markdownTableHeadNone">Description  </th><th class="markdownTableHeadNone">Use Case  </th></tr>
+<th class="markdownTableHeadNone">Setting  </th><th class="markdownTableHeadNone">Type  </th><th class="markdownTableHeadNone">Range  </th><th class="markdownTableHeadNone">Default  </th><th class="markdownTableHeadNone">Description  </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><b>Before DOF</b>  </td><td class="markdownTableBodyNone">Renders before Depth of Field  </td><td class="markdownTableBodyNone">Smoke participates in DOF blur. Best quality but particles render on top.  </td></tr>
+<td class="markdownTableBodyNone"><b>Enable Depth Write</b>  </td><td class="markdownTableBodyNone">bool  </td><td class="markdownTableBodyNone">-  </td><td class="markdownTableBodyNone"><span class="tt">true</span>  </td><td class="markdownTableBodyNone">Write smoke depth to scene depth buffer for correct translucent sorting. When enabled, particles behind opaque smoke regions are correctly occluded.  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><b>After DOF (Recommended)</b>  </td><td class="markdownTableBodyNone">Renders after Depth of Field  </td><td class="markdownTableBodyNone">Smoke remains sharp. Particles can be depth-sorted.  </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><b>Translucency After DOF</b>  </td><td class="markdownTableBodyNone">Renders with separate translucency  </td><td class="markdownTableBodyNone">Required for Custom Depth sorting. See <a href="https://www.notion.so/IVSmoke-User-Guide-2f747ec9719f80978337fc22e2ecfe8c?pvs=21">Translucent / Custom Depth</a>.  </td></tr>
+<td class="markdownTableBodyNone"><b>Depth Write Bias</b>  </td><td class="markdownTableBodyNone">float  </td><td class="markdownTableBodyNone">0.0-100.0  </td><td class="markdownTableBodyNone">50.0  </td><td class="markdownTableBodyNone">Depth bias in centimeters. Positive values push depth further from camera. Helps prevent z-fighting artifacts.  </td></tr>
 </table>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md76"></a>
-Visual Alpha Type Options</h1>
-<table class="markdownTable">
-<tr class="markdownTableHead">
-<th class="markdownTableHeadNone">Option  </th><th class="markdownTableHeadNone">Description  </th></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><b>Use Alpha (0~1)</b>  </td><td class="markdownTableBodyNone">Standard alpha blending. Smooth transparency transitions.  </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><b>Use CutOff</b>  </td><td class="markdownTableBodyNone">Binary alpha based on threshold. Creates hard-edged smoke.  </td></tr>
-</table>
+Depth Write System</h1>
+<p><a class="el" href="class_i_v_smoke.html">IVSmoke</a> uses a <b>pre-pass depth write</b> system for correct translucent object sorting:</p>
+<ol type="1">
+<li><b>Ray March Pass</b> - Reads opaque scene depth (before smoke modifies it)</li>
+<li><b>Upscaling &amp; Filtering</b> - Prepares smoke data at full resolution</li>
+<li><b>Depth Write Pass</b> - Writes smoke depth to scene depth buffer</li>
+</ol>
+<p><b>Key characteristics:</b></p><ul>
+<li>Only writes depth for nearly opaque pixels (Alpha &gt;= 0.99)</li>
+<li>Executes in pre-pass pipeline before engine's translucent pass</li>
+<li>Particles and other translucents are automatically sorted correctly behind opaque smoke regions</li>
+</ul>
+<p><b>When to adjust Depth Write Bias:</b></p><ul>
+<li>Increase if you see z-fighting (flickering) at smoke edges</li>
+<li>Decrease if particles appear to "pop through" smoke too early</li>
+<li>Default value of 50 cm works well for most use cases</li>
+</ul>
 <hr  />
 <h1 class="doxsection"><a class="anchor" id="autotoc_md78"></a>
 Debug</h1>
@@ -464,109 +464,56 @@ Preset Examples</h2>
 </table>
 <hr  />
 <h1 class="doxsection"><a class="anchor" id="autotoc_md86"></a>
-Translucent / Custom Depth</h1>
-<p>When smoke needs to correctly sort with translucent objects (like fire effect, or glass), use the <b>Custom Depth</b> sorting feature.</p>
+Translucent Sorting</h1>
+<p>When smoke needs to correctly sort with translucent objects (like fire effects or glass), <a class="el" href="class_i_v_smoke.html">IVSmoke</a> uses a <b>Depth Write</b> system.</p>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md87"></a>
-The Problem</h2>
-<p>By default, smoke renders in a single post-process pass. Translucent particles (Niagara/Cascade) may appear incorrectly in front of or behind the smoke regardless of actual depth.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md88"></a>
-The Solution: Custom Depth Sorting</h2>
-<ol type="1">
-<li><b>Set Render Pass</b> to <span class="tt">Translucency After DOF</span></li>
-<li><b>Enable</b> <span class="tt">Use CustomDepth Sorting</span> checkbox (appears only when Translucency After DOF is selected)</li>
-<li><b>Configure particles</b> to write Custom Depth</li>
-</ol>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md89"></a>
-Setup Steps</h2>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md90"></a>
-Step 1: Configure IVSmoke Settings</h2>
-<ol type="1">
-<li>Go to <b>Project Settings &gt; Plugins &gt; <a class="el" href="class_i_v_smoke.html">IVSmoke</a> &gt; Rendering</b></li>
-<li>Set <b>Render Pass</b> to <span class="tt">Translucency After DOF</span></li>
-<li>Check <b><span class="tt">Use CustomDepth Sorting</span></b></li>
-</ol>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md91"></a>
-Step 2: Configure Translucent Material</h2>
-<div class="image">
-<img src="GlobalSettings_image12.png" alt=""/>
-<div class="caption">
-GlobalSettings_image12.png</div></div>
-    <p>For each material that should sort with smoke:</p>
-<ol type="1">
-<li>Open your Material</li>
-<li>Type ‘**Custom**’ on search bar in <b>Details tab</b></li>
-<li>Check <b><span class="tt">Allow Custom Depth Writes</span></b></li>
-</ol>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md92"></a>
-Step 3: Enable Custom Depth on Each Components</h2>
-<div class="image">
-<img src="GlobalSettings_image13.png" alt=""/>
-<div class="caption">
-GlobalSettings_image13.png</div></div>
-    <p>For each component that should sort with smoke:</p>
-<ol type="1">
-<li>Select your component from <b>Details</b></li>
-<li>Go to <b>Rendering &gt; Advanced</b></li>
-<li>Check <span class="tt">Render CustomDepth Pass</span></li>
-</ol>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md93"></a>
-Step 4: Enable Project Custom Depth</h2>
-<div class="image">
-<img src="GlobalSettings_image14.png" alt=""/>
-<div class="caption">
-GlobalSettings_image14.png</div></div>
-    <ol type="1">
-<li>Go to <b>Project Settings &gt; Engine &gt; Rendering</b></li>
-<li>Set <b>Custom Depth-Stencil Pass</b> to <span class="tt">Enabled with Stencil</span></li>
-</ol>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md94"></a>
-Step 5: Set Opacity Mask Clip Value (Optional)</h2>
-<p>For proper depth testing across all opacity ranges, you must set a low <b>Opacity Mask Clip Value</b> on your particle materials:</p>
-<ol type="1">
-<li>Open your particle material</li>
-<li>Set <b>Opacity Mask Clip Value</b> to a low value (e.g., <span class="tt">0.01</span>)</li>
-<li>This ensures that particles with any visible opacity correctly write to Custom Depth</li>
-</ol>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md95"></a>
 How It Works</h2>
-<div class="fragment"><div class="line">Without Custom Depth:</div>
+<p><a class="el" href="class_i_v_smoke.html">IVSmoke</a> writes smoke depth to the standard scene depth buffer during a pre-pass, before Unreal's translucent pass executes. This allows translucent particles (Niagara/Cascade) and other translucent objects to correctly depth-test against smoke.</p>
+<div class="fragment"><div class="line">Render Pipeline Order:</div>
 <div class="line">┌─────────────────────────────┐</div>
-<div class="line">│ Scene Color                 │</div>
+<div class="line">│ 1. Opaque Pass              │  ← Scene geometry renders</div>
 <div class="line">├─────────────────────────────┤</div>
-<div class="line">│ Smoke (always on top)       │  ← Problem: Ignores depth</div>
+<div class="line">│ 2. IVSmoke Pre-Pass         │  ← Ray march + Depth Write</div>
+<div class="line">│    - Reads opaque depth     │</div>
+<div class="line">│    - Writes smoke depth     │</div>
 <div class="line">├─────────────────────────────┤</div>
-<div class="line">│ Particles                   │</div>
+<div class="line">│ 3. Translucent Pass         │  ← Particles read scene depth (includes smoke)</div>
+<div class="line">│    - Correct sorting!       │</div>
+<div class="line">├─────────────────────────────┤</div>
+<div class="line">│ 4. IVSmoke Post-Pass        │  ← Final composite</div>
 <div class="line">└─────────────────────────────┘</div>
-<div class="line"> </div>
-<div class="line">With Custom Depth Sorting:</div>
-<div class="line">┌─────────────────────────────┐</div>
-<div class="line">│ Scene Color                 │</div>
-<div class="line">├─────────────────────────────┤</div>
-<div class="line">│ Per-pixel depth comparison  │  ← Reads Custom Depth + Scene Depth</div>
-<div class="line">│ Smoke OR Particle           │  ← Composites based on depth</div>
-<div class="line">└─────────────────────────────┘</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md96"></a>
-Performance Considerations</h2>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md88"></a>
+Automatic Sorting</h2>
+<p>Unlike previous versions that required Custom Depth configuration, the current Depth Write system works automatically:</p>
+<ul>
+<li><b>No additional setup required</b> for translucent sorting</li>
+<li>Particles behind opaque smoke regions are correctly occluded</li>
+<li>Only nearly opaque smoke pixels (Alpha &gt;= 0.99) write depth</li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md89"></a>
+Troubleshooting</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
-<th class="markdownTableHeadNone">Feature  </th><th class="markdownTableHeadNone">Cost  </th></tr>
+<th class="markdownTableHeadNone">Issue  </th><th class="markdownTableHeadNone">Solution  </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">Custom Depth Pass  </td><td class="markdownTableBodyNone">Low (if already enabled)  </td></tr>
+<td class="markdownTableBodyNone">Particles appear in front of smoke  </td><td class="markdownTableBodyNone">Ensure <b>Enable Depth Write</b> is <span class="tt">true</span> (default)  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">Depth-Sorted Compositing  </td><td class="markdownTableBodyNone">Medium (additional texture reads per pixel)  </td></tr>
+<td class="markdownTableBodyNone">Z-fighting at smoke edges  </td><td class="markdownTableBodyNone">Increase <b>Depth Write Bias</b> value  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">Particle Custom Depth Output  </td><td class="markdownTableBodyNone">Low per particle  </td></tr>
+<td class="markdownTableBodyNone">Particles pop through too early  </td><td class="markdownTableBodyNone">Decrease <b>Depth Write Bias</b> value  </td></tr>
 </table>
-<p><b>Recommendation:</b> Only enable Custom Depth sorting when you have translucent particles that must correctly intersect with smoke volumes.</p>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md90"></a>
+Performance</h2>
+<p>The Depth Write system has minimal performance overhead as it runs as part of the pre-pass pipeline and only writes depth for opaque smoke regions.</p>
 <hr  />
-<h1 class="doxsection"><a class="anchor" id="autotoc_md98"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md92"></a>
 Editor Preview</h1>
 <div class="image">
 <img src="GlobalSettings_image15.png" alt=""/>
 <div class="caption">
 GlobalSettings_image15.png</div></div>
     <p>The <b>Editor Preview</b> feature allows you to preview smoke simulation directly in the editor viewport without entering Play mode.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md99"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md93"></a>
 Starting Preview</h2>
 <ol type="1">
 <li>Select an <span class="tt"><a class="el" href="class_a_i_v_smoke_voxel_volume.html">AIVSmokeVoxelVolume</a></span> actor in your level</li>
@@ -575,10 +522,10 @@ Starting Preview</h2>
 <li>Click <b>Start Preview Simulation</b></li>
 </ol>
 <p>The smoke will begin simulating through its lifecycle phases (Expansion → Sustain → Dissipation) directly in the editor viewport.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md100"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md94"></a>
 Stopping Preview</h2>
 <p>Click <b>Stop Preview Simulation</b> to immediately halt the simulation and clear all voxel data.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md101"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md95"></a>
 Debug Visualization Options</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -604,14 +551,14 @@ Debug Visualization Options</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><b>Visible Step Count Percent</b>  </td><td class="markdownTableBodyNone">int32  </td><td class="markdownTableBodyNone">100  </td><td class="markdownTableBodyNone">Percentage of simulation steps to visualize.  </td></tr>
 </table>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md102"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md96"></a>
 Preview Workflow Tips</h2>
 <ol type="1">
 <li><b>Rapid Iteration</b>: Adjust Volume parameters, click Start Preview, observe results, stop, adjust, repeat</li>
 <li><b>Use Wireframe Mode</b>: Enable <span class="tt">Show Voxel Wireframe</span> to see the simulation structure without heavy mesh rendering</li>
 <li><b>Status Monitoring</b>: Keep <span class="tt">Show Status Text</span> enabled to track voxel count and current simulation phase</li>
 </ol>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md103"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md97"></a>
 Limitations</h2>
 <ul>
 <li>Editor Preview does not trigger network replication</li>
@@ -619,10 +566,10 @@ Limitations</h2>
 <li>Performance in preview may differ from packaged builds</li>
 </ul>
 <hr  />
-<h1 class="doxsection"><a class="anchor" id="autotoc_md105"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md99"></a>
 Stat IVSmoke</h1>
 <p><a class="el" href="class_i_v_smoke.html">IVSmoke</a> provides detailed statistics for performance profiling and VRAM monitoring.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md106"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md100"></a>
 Enabling Stats</h2>
 <p>Open the console (<span class="tt">~</span> key) and type:</p>
 <div class="fragment"><div class="line">stat IVSmoke</div>
@@ -630,9 +577,9 @@ Enabling Stats</h2>
 <img src="GlobalSettings_image16.png" alt=""/>
 <div class="caption">
 GlobalSettings_image16.png</div></div>
-    <h2 class="doxsection"><a class="anchor" id="autotoc_md107"></a>
+    <h2 class="doxsection"><a class="anchor" id="autotoc_md101"></a>
 Available Statistics</h2>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md108"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md102"></a>
 Memory Stats (GPU VRAM)</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -646,7 +593,7 @@ Memory Stats (GPU VRAM)</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><b>Total VRAM</b>  </td><td class="markdownTableBodyNone">Sum of all <a class="el" href="class_i_v_smoke.html">IVSmoke</a> GPU memory usage.  </td></tr>
 </table>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md109"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md103"></a>
 Cycle Stats (CPU/GPU Time)</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -664,7 +611,7 @@ Cycle Stats (CPU/GPU Time)</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><b>Process Dissipation</b>  </td><td class="markdownTableBodyNone">Actual voxel removal logic execution time.  </td></tr>
 </table>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md110"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md104"></a>
 Counter Stats</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -676,7 +623,7 @@ Counter Stats</h2>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><b>Destroyed Voxel Count (Per Frame)</b>  </td><td class="markdownTableBodyNone">Voxels removed this frame.  </td></tr>
 </table>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md111"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md105"></a>
 Using with Unreal Insights</h2>
 <p>For deeper analysis, use <b>Unreal Insights</b> profiler:</p>
 <ol type="1">
@@ -685,25 +632,25 @@ Using with Unreal Insights</h2>
 <li>Filter by "IVSmoke" to see detailed timing breakdown</li>
 </ol>
 <hr  />
-<h1 class="doxsection"><a class="anchor" id="autotoc_md113"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md107"></a>
 Best Practices</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md114"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md108"></a>
 Recommended Level Placement</h2>
 <p>When placing smoke volumes in your level, consider these guidelines:</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md115"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md109"></a>
 Spacing and Distribution</h2>
 <ul>
 <li><b>Avoid clustering</b>: Do not spawn many smoke volumes in the same location simultaneously. Overlapping volumes in the same area can cause rendering artifacts and significant performance drops.</li>
 <li><b>Stagger activation</b>: If multiple smoke grenades land near each other, consider staggering their activation times slightly.</li>
 <li><b>Use adequate spacing</b>: Maintain reasonable distance between simultaneously active smoke volumes.</li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md116"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md110"></a>
 Volume Sizing</h2>
 <ul>
 <li><b>Match gameplay needs</b>: Size your smoke volumes to cover the intended area without excessive overlap.</li>
 <li><b>Consider sightlines</b>: Place smoke to block key sightlines rather than covering entire areas.</li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md117"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md111"></a>
 Performance Tips</h2>
 <ul>
 <li><b>Limit simultaneous volumes</b>: Keep the number of simultaneously active smoke volumes reasonable for your target hardware.</li>

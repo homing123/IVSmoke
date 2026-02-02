@@ -178,16 +178,16 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a25fb61b630accaa759bc818ac714c089" id="r_a25fb61b630accaa759bc818ac714c089"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#a25fb61b630accaa759bc818ac714c089">FXAASpanMax</a> = 4.0f</td></tr>
 <tr class="memitem:ad83d4660e489ed0bedafbca1e7a152b8" id="r_ad83d4660e489ed0bedafbca1e7a152b8"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#ad83d4660e489ed0bedafbca1e7a152b8">FXAARange</a> = 1.2f</td></tr>
 <tr class="memitem:a8ec5ec913cabe49abb1a573dc48d7b8b" id="r_a8ec5ec913cabe49abb1a573dc48d7b8b"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#a8ec5ec913cabe49abb1a573dc48d7b8b">FXAASharpness</a> = 1.7f</td></tr>
-<tr class="memitem:ad11ae061d8729b2d7115c01f66302d71" id="r_ad11ae061d8729b2d7115c01f66302d71"><td class="memItemLeft">EIVSmokeRenderPass&#160;</td><td class="memItemRight"><a class="el" href="#ad11ae061d8729b2d7115c01f66302d71">RenderPass</a> = EIVSmokeRenderPass::AfterDOF</td></tr>
 <tr class="memitem:aebc32bc4ba36f43ea2328f5eb14aa2c0" id="r_aebc32bc4ba36f43ea2328f5eb14aa2c0"><td class="memItemLeft">FSoftObjectPath&#160;</td><td class="memItemRight"><a class="el" href="#aebc32bc4ba36f43ea2328f5eb14aa2c0">SmokeVisualMaterialPreset</a></td></tr>
-<tr class="memitem:a9ee3a9ba9c41c6cf054d4633e9d32d2c" id="r_a9ee3a9ba9c41c6cf054d4633e9d32d2c"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a9ee3a9ba9c41c6cf054d4633e9d32d2c">bUseCustomDepthBasedSorting</a> = false</td></tr>
+<tr class="memitem:a0bdc1fbfd6d7a8581279365c57ea08e1" id="r_a0bdc1fbfd6d7a8581279365c57ea08e1"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a0bdc1fbfd6d7a8581279365c57ea08e1">bEnableDepthWrite</a> = true</td></tr>
+<tr class="memitem:a91fc574c006624528a7586a989eba4d3" id="r_a91fc574c006624528a7586a989eba4d3"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#a91fc574c006624528a7586a989eba4d3">DepthWriteBias</a> = 50.0f</td></tr>
 <tr class="memitem:adf2d312d2c8d36d754e4556e4e2cfe95" id="r_adf2d312d2c8d36d754e4556e4e2cfe95"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#adf2d312d2c8d36d754e4556e4e2cfe95">bShowDebugVolumes</a> = false</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Global settings for <a class="el" href="class_i_v_smoke.html">IVSmoke</a> plugin. Accessible via Project Settings &gt; Plugins &gt; <a class="el" href="class_i_v_smoke.html">IVSmoke</a>.</p>
 <p>These settings affect ALL smoke volumes globally. For per-volume appearance (color, density), use <a class="el" href="class_u_i_v_smoke_smoke_preset.html">UIVSmokeSmokePreset</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00129">129</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00104">104</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aa7492803d9d8f0eccd558f87a7796d06" name="aa7492803d9d8f0eccd558f87a7796d06"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa7492803d9d8f0eccd558f87a7796d06">&#9670;&#160;</a></span>UIVSmokeSettings()</h2>
@@ -260,7 +260,7 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00142">142</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00117">117</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
 
 </div>
 </div>
@@ -407,7 +407,7 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00143">143</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00118">118</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
 
 </div>
 </div>
@@ -484,7 +484,24 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Include skeletal meshes (characters) in shadow capture. </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00353">353</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00328">328</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
+
+</div>
+</div>
+<a id="a0bdc1fbfd6d7a8581279365c57ea08e1" name="a0bdc1fbfd6d7a8581279365c57ea08e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0bdc1fbfd6d7a8581279365c57ea08e1">&#9670;&#160;</a></span>bEnableDepthWrite</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UIVSmokeSettings::bEnableDepthWrite = true</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Write smoke depth to scene depth buffer for correct translucent sorting. When enabled, particles behind opaque smoke regions are correctly occluded. </p>
+
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00385">385</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
 
 </div>
 </div>
@@ -500,7 +517,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00376">376</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00351">351</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
 
 </div>
 </div>
@@ -517,7 +534,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Enable Rayleigh scattering for atmospheric light effects. </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00290">290</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00265">265</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
 
 </div>
 </div>
@@ -534,7 +551,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Enable smoke rendering globally. </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00159">159</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00134">134</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
 
 </div>
 </div>
@@ -551,7 +568,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Enable Variance Shadow Maps for soft shadows. </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00341">341</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00316">316</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
 
 </div>
 </div>
@@ -568,7 +585,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Override light color instead of using scene directional light. </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00311">311</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00286">286</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
 
 </div>
 </div>
@@ -585,7 +602,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Override light direction instead of using scene directional light. </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00303">303</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00278">278</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
 
 </div>
 </div>
@@ -602,7 +619,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Show advanced options in all categories. </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00163">163</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00138">138</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
 
 </div>
 </div>
@@ -619,24 +636,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Show debug visualization for smoke volumes. </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00421">421</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
-
-</div>
-</div>
-<a id="a9ee3a9ba9c41c6cf054d4633e9d32d2c" name="a9ee3a9ba9c41c6cf054d4633e9d32d2c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9ee3a9ba9c41c6cf054d4633e9d32d2c">&#9670;&#160;</a></span>bUseCustomDepthBasedSorting</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool UIVSmokeSettings::bUseCustomDepthBasedSorting = false</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Use CustomDepth for depth-based sorting with particles. Only available when RenderPass = TranslucencyAfterDOF. </p>
-
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00414">414</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00397">397</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
 
 </div>
 </div>
@@ -653,7 +653,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Blend region at cascade boundaries (0-0.3). </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00361">361</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00336">336</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
 
 </div>
 </div>
@@ -670,7 +670,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Log/Linear cascade split blend (0=linear, 1=logarithmic). </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00357">357</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00332">332</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
 
 </div>
 </div>
@@ -687,7 +687,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Custom: Shadow map resolution per cascade (256-2048). </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00217">217</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00192">192</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
 
 </div>
 </div>
@@ -704,7 +704,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Custom: Number of light marching steps (1-16). </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00198">198</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00173">173</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
 
 </div>
 </div>
@@ -721,7 +721,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Custom: Maximum ray marching steps (32-1024). </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00179">179</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00154">154</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
 
 </div>
 </div>
@@ -738,7 +738,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Custom: Minimum step size in world units (5-100). </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00186">186</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00161">161</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
 
 </div>
 </div>
@@ -755,7 +755,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Custom: Number of shadow cascades (1-6). </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00210">210</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00185">185</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
 
 </div>
 </div>
@@ -772,7 +772,24 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Custom: Maximum shadow distance in centimeters (1000-100000). </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00224">224</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00199">199</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
+
+</div>
+</div>
+<a id="a91fc574c006624528a7586a989eba4d3" name="a91fc574c006624528a7586a989eba4d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91fc574c006624528a7586a989eba4d3">&#9670;&#160;</a></span>DepthWriteBias</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float UIVSmokeSettings::DepthWriteBias = 50.0f</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Depth bias in centimeters. Positive values push depth further from camera. </p>
+
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00390">390</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
 
 </div>
 </div>
@@ -789,7 +806,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Minimum brightness in externally shadowed areas (0=dark, 1=no shadow). </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00337">337</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00312">312</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
 
 </div>
 </div>
@@ -806,7 +823,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>External shadow quality level. </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00203">203</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00178">178</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
 
 </div>
 </div>
@@ -822,7 +839,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00382">382</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00357">357</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
 
 </div>
 </div>
@@ -839,7 +856,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>FXAA edge detection threshold range. </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00393">393</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00368">368</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
 
 </div>
 </div>
@@ -856,7 +873,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>FXAA sharpness factor. </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00397">397</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00372">372</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
 
 </div>
 </div>
@@ -873,7 +890,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>FXAA maximum edge search distance. </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00389">389</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00364">364</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
 
 </div>
 </div>
@@ -890,7 +907,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Global quality preset. Sets all section quality levels at once. </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00167">167</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00142">142</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
 
 </div>
 </div>
@@ -907,7 +924,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Custom light color. Used when bOverrideLightColor is true. </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00315">315</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00290">290</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
 
 </div>
 </div>
@@ -924,7 +941,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Custom light direction (normalized). Used when bOverrideLightDirection is true. </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00307">307</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00282">282</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
 
 </div>
 </div>
@@ -941,7 +958,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Maximum distance to march toward light (0=no limit). </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00326">326</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00301">301</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
 
 </div>
 </div>
@@ -958,7 +975,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Exponential distribution factor for light marching steps (1=uniform, 2-3=recommended). </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00330">330</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00305">305</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
 
 </div>
 </div>
@@ -974,7 +991,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00379">379</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00354">354</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
 
 </div>
 </div>
@@ -991,24 +1008,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Ray marching quality level. </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00172">172</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
-
-</div>
-</div>
-<a id="ad11ae061d8729b2d7115c01f66302d71" name="ad11ae061d8729b2d7115c01f66302d71"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad11ae061d8729b2d7115c01f66302d71">&#9670;&#160;</a></span>RenderPass</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">EIVSmokeRenderPass UIVSmokeSettings::RenderPass = EIVSmokeRenderPass::AfterDOF</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Post-processing pass where smoke is rendered. </p>
-
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00404">404</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00147">147</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
 
 </div>
 </div>
@@ -1025,7 +1025,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Anisotropy parameter for Henyey-Greenstein phase function. 0 = isotropic, positive = forward scattering, negative = backward scattering </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00299">299</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00274">274</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
 
 </div>
 </div>
@@ -1042,7 +1042,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Scattering intensity multiplier. Higher = more light scattered through smoke. </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00294">294</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00269">269</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
 
 </div>
 </div>
@@ -1059,7 +1059,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Self-shadow quality level. </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00191">191</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00166">166</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
 
 </div>
 </div>
@@ -1076,7 +1076,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Minimum brightness in fully shadowed areas (0=dark, 1=no shadow). </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00322">322</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00297">297</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
 
 </div>
 </div>
@@ -1093,7 +1093,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Shadow depth bias to prevent shadow acne. </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00349">349</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00324">324</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
 
 </div>
 </div>
@@ -1110,7 +1110,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Sharpening/blurring of the smoke composite. Positive = sharpen, Zero = no filter, Negative = blur. </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00271">271</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00246">246</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
 
 </div>
 </div>
@@ -1127,7 +1127,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Controls edge softness. Lower = softer edges. </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00258">258</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00233">233</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
 
 </div>
 </div>
@@ -1144,7 +1144,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Scale for noise sampling. Affects smoke detail size. </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00262">262</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00237">237</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
 
 </div>
 </div>
@@ -1161,7 +1161,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Smoke visual material data asset. </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00408">408</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00379">379</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
 
 </div>
 </div>
@@ -1178,7 +1178,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Edge fade sharpness factor. </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00283">283</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00258">258</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
 
 </div>
 </div>
@@ -1195,7 +1195,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Noise-based edge fade offset. </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00279">279</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00254">254</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
 
 </div>
 </div>
@@ -1212,7 +1212,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Volume edge range offset for density falloff. </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00275">275</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00250">250</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
 
 </div>
 </div>
@@ -1229,7 +1229,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>VSM blur kernel radius (0=no blur). Higher = softer shadows. </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00345">345</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00320">320</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
 
 </div>
 </div>
@@ -1246,7 +1246,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>VSM light bleeding reduction (0=none). </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00369">369</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00344">344</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
 
 </div>
 </div>
@@ -1263,7 +1263,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Minimum variance for VSM to prevent artifacts. </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00365">365</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00340">340</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
 
 </div>
 </div>
@@ -1280,7 +1280,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Wind direction and speed for smoke animation. </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00266">266</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_v_smoke_settings_8h_source.html#l00241">241</a> of file <a class="el" href="_i_v_smoke_settings_8h_source.html">IVSmokeSettings.h</a>.</p>
 
 </div>
 </div>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['5_3a_20set_20opacity_20mask_20clip_20value_20optional_0',['Step 5: Set Opacity Mask Clip Value (Optional)',['../md_pages_2_global_settings_2_global_settings_guide.html#autotoc_md94',1,'']]]
+  ['_3a_0',['TIMING MODEL (Synchronous Capture):',['../struct_f_i_v_smoke_cascade_data.html#autotoc_md2',1,'']]]
 ];

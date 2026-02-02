@@ -17,5 +17,6 @@ var dir_d826e9469e6ee600cfcc6429a53b6188 =
     [ "IVSmokeShaders.cpp", "_i_v_smoke_shaders_8cpp_source.html", null ],
     [ "IVSmokeVisualMaterialPreset.cpp", "_i_v_smoke_visual_material_preset_8cpp_source.html", null ],
     [ "IVSmokeVoxelVolume.cpp", "_i_v_smoke_voxel_volume_8cpp_source.html", null ],
-    [ "IVSmokeVSMProcessor.cpp", "_i_v_smoke_v_s_m_processor_8cpp_source.html", null ]
+    [ "IVSmokeVSMProcessor.cpp", "_i_v_smoke_v_s_m_processor_8cpp_source.html", null ],
+    [ "MaterialExpressionIVSmoke_TextureSample.cpp", "_material_expression_i_v_smoke___texture_sample_8cpp_source.html", null ]
 ];
